@@ -217,7 +217,7 @@
     <nav class="nav-links" aria-label="Primary"><a href="index.html">Home</a><a href="showreel.html">Showreel</a><a href="journal.html">Design Journal</a><a href="about.html">About Me</a><a href="sidequests.html">Side Quests</a></nav>
     <div class="nav-right">
       <button class="theme" id="theme" aria-label="Toggle appearance"></button>
-      <button class="nav-cta" data-resume type="button">Résumé</button>
+      <button class="nav-cta" data-resume type="button">Resume</button>
     </div>
   </div>
 </header>
@@ -299,7 +299,7 @@
   <section class="sec reveal">
     <h2>Try the loop</h2>
     <p>The whole concept rests on one claim: that you can operate this without looking, because every action answers back. So rather than describe it — <b>tap the earcup</b>. Single tap, double, triple, or press and hold. Watch the app keep up, and listen: each action has its own cue.</p>
-    <p class="mut" style="font-size:13.5px">Sound on. Prototype designed by me and built with AI assistance — the same rapid-prototyping approach I used at Disney.</p>
+    <p class="mut" style="font-size:13.5px">Sound on. Designed and rapidly prototyped by me — the same hands-on approach I used at Disney.</p>
 
     <div class="d-wrap">
       <div class="d-play">
@@ -393,7 +393,7 @@
 
 <footer class="foot"><div class="wrap"><div class="foot-links">
   <a href="mailto:quinrdesign@gmail.com">quinrdesign@gmail.com</a>
-  <button data-resume type="button">Résumé</button>
+  <button data-resume type="button">Resume</button>
   <a href="https://www.linkedin.com/in/quin-richards/" target="_blank" rel="noopener">LinkedIn</a>
   <span class="foot-note">© 2026 Quin Richards</span>
 </div></div></footer>
@@ -411,10 +411,10 @@
   </div>
 </div></div>
 
-<div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Résumé">
+<div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume">
   <div class="modal-backdrop"></div>
-  <div class="modal-card"><div class="modal-head"><h2>Quin Richards — Résumé</h2><div style="display:flex;align-items:center"><a class="modal-dl" href="assets/resume.pdf" download>Download</a><button class="modal-x" aria-label="Close" type="button"><svg viewBox="0 0 24 24"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button></div></div>
-  <div class="modal-body"><iframe title="Résumé" style="display:none"></iframe><div class="modal-missing" style="display:none">Drop your PDF at assets/resume.pdf and it will appear here.</div></div></div>
+  <div class="modal-card"><div class="modal-head"><h2>Quin Richards — Resume</h2><div style="display:flex;align-items:center"><a class="modal-dl" href="assets/resume.pdf" download>Download</a><button class="modal-x" aria-label="Close" type="button"><svg viewBox="0 0 24 24"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button></div></div>
+  <div class="modal-body"><iframe title="Resume" style="display:none"></iframe><div class="modal-missing" style="display:none">Drop your PDF at assets/resume.pdf and it will appear here.</div></div></div>
 </div>
 
 <audio id="audio" preload="none"></audio>
@@ -466,7 +466,9 @@ $('dBar').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){pos=Math.min(M
 audio.addEventListener('timeupdate',()=>{if(audio.currentTime){pos=audio.currentTime;progress();}});
 audio.addEventListener('loadedmetadata',()=>{if(audio.duration){MUSIC[idx].dur=audio.duration;$('dDur').textContent=fmt(audio.duration);}});
 audio.addEventListener('ended',next);
-load(0);
+/* continuity bridge: carry the current track to/from the rest of the site */
+(function(){var _i=0;try{_i=(JSON.parse(sessionStorage.getItem('qpState'))||{}).i||0;}catch(e){}load(_i);})();
+addEventListener('pagehide',function(){try{sessionStorage.setItem('qpState',JSON.stringify({i:idx,t:pos,playing:playing}));}catch(e){}});
 
 /* ---------- interactive Cue demo ---------- */
 (function(){

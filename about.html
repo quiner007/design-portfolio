@@ -23,7 +23,7 @@
       <a href="sidequests.html" >Side Quests</a>
     </nav>
     <div style="display:flex;gap:10px;align-items:center;">
-      <button class="nav-cta" data-resume type="button">Résumé</button>
+      <button class="nav-cta" data-resume type="button">Resume</button>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false" type="button"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
     </div>
   </div>
@@ -95,7 +95,7 @@
     <p class="foot-cta reveal">Let's make something people love. <a href="mailto:quinrdesign@gmail.com">Say hi.</a></p>
     <div class="foot-links reveal">
       <a href="mailto:quinrdesign@gmail.com">quinrdesign@gmail.com</a>
-      <button data-resume type="button">Résumé</button>
+      <button data-resume type="button">Resume</button>
       <a href="https://quiner007.itch.io/" target="_blank" rel="noopener">itch.io</a>
       <a href="https://www.instagram.com/quin_richards/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.linkedin.com/in/quin-richards/" target="_blank" rel="noopener">LinkedIn</a>
@@ -104,33 +104,25 @@
   </div>
 </footer>
 
-<div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Résumé">
+<div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume">
   <div class="modal-backdrop"></div>
   <div class="modal-card">
     <div class="modal-head">
-      <h2>Quin Richards — Résumé</h2>
+      <h2>Quin Richards — Resume</h2>
       <div class="modal-actions">
         <a class="modal-dl" href="assets/resume.pdf" download>Download</a>
         <button class="modal-x" aria-label="Close résumé" type="button"><svg viewBox="0 0 24 24"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
       </div>
     </div>
     <div class="modal-body">
-      <iframe title="Résumé PDF" style="display:none"></iframe>
+      <iframe title="Resume PDF" style="display:none"></iframe>
       <div class="modal-missing" style="display:none">Drop your PDF at assets/resume.pdf<br/>and it will appear here.</div>
     </div>
   </div>
 </div>
 
-<div class="jukebox" id="jukebox">
-  <button class="jb-btn" id="jbBtn" aria-label="Play music" type="button"><svg id="jbIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-  <button class="jb-skip" id="jbPrev" aria-label="Previous track" type="button"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
-  <button class="jb-skip" id="jbNext" aria-label="Next track" type="button"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
-  <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-  <div class="jb-meta"><span class="jb-label">Quintessential</span><span class="jb-track" id="jbTrack">Woody</span></div>
-</div>
-<audio id="ambient" preload="none"></audio>
-
 <script src="js/main.js"></script>
+<script src="js/player.js"></script>
 <div class="modal" id="previewModal" role="dialog" aria-modal="true" aria-label="Album preview">
   <div class="modal-backdrop" data-preview-close></div>
   <div class="preview-card">

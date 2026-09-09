@@ -83,64 +83,7 @@
   });
 })();
 
-/* ==========================================================
-   JUKEBOX — multi-track music player for Quin's songs.
-   Drop mp3s in assets/music/ and list them here.
-   Never autoplays; visitor presses play.
-   ========================================================== */
-var MUSIC = [
-  { src: 'assets/music/woody.m4a',      title: 'Woody' },
-  { src: 'assets/music/leap.m4a',       title: 'Leap' },
-  { src: 'assets/music/flowershop.m4a', title: 'Flowershop' },
-  { src: 'assets/music/copper.m4a',     title: 'Copper' },
-  { src: 'assets/music/lovelorn.m4a',   title: 'Lovelorn' },
-  { src: 'assets/music/child.m4a',      title: 'Child' }
-];
-
-(function () {
-  var jukebox = document.getElementById('jukebox');
-  if (!jukebox) return;
-  var audio = document.getElementById('ambient');
-  var trackEl = document.getElementById('jbTrack');
-  var iconEl = document.getElementById('jbIcon');
-  var t = 0, on = false;
-
-  function setIcon(playing) {
-    if (iconEl) iconEl.innerHTML = playing
-      ? '<path d="M6 5h4v14H6zm8 0h4v14h-4z"/>'
-      : '<path d="M8 5v14l11-7z"/>';
-  }
-  function load(i) {
-    t = (i + MUSIC.length) % MUSIC.length;
-    audio.src = MUSIC[t].src;
-    if (trackEl) trackEl.textContent = MUSIC[t].title;
-  }
-  function play() {
-    if (!audio.src) load(t);
-    var p = audio.play();
-    if (p && p.then) {
-      p.then(function () {
-        on = true; jukebox.classList.add('playing'); setIcon(true);
-        if (window.__reelMute) window.__reelMute(); // mute video if music starts
-      }).catch(function () {
-        if (trackEl) trackEl.textContent = 'Add mp3s to assets/music';
-      });
-    }
-  }
-  window.__stopMusic = function () {
-    audio.pause(); on = false; jukebox.classList.remove('playing'); setIcon(false);
-  };
-
-  document.getElementById('jbBtn').addEventListener('click', function () {
-    if (on) { window.__stopMusic(); } else { play(); }
-  });
-  var next = document.getElementById('jbNext');
-  var prev = document.getElementById('jbPrev');
-  if (next) next.addEventListener('click', function () { load(t + 1); if (on) play(); });
-  if (prev) prev.addEventListener('click', function () { load(t - 1); if (on) play(); });
-  audio.addEventListener('ended', function () { load(t + 1); play(); });
-  load(0);
-})();
+/* JUKEBOX moved to js/player.js (portable, cross-page player). */
 
 /* ==========================================================
    SHOWREEL — robust YouTube player w/ rotation.
