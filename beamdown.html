@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Beamdown — Case Study — Quin Richards</title>
-<meta name="description" content="Beamdown — an action/adventure boss rush and 30-person student capstone that shipped on Steam. Design direction and production, led by Quin Richards." />
+<meta name="description" content="Beamdown — an action/adventure boss rush that shipped on Steam. Combat, enemy and level design by Quin Richards, built around one problem: making a hard game readable." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -35,12 +35,12 @@
 <section class="page-hero">
   <div class="wrap">
     <a href="index.html#work" style="font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:inline-flex;gap:8px;align-items:center;margin-bottom:20px;">← Back to work</a>
-    <span class="eyebrow reveal" style="display:block;">Case study · Game UX, Combat &amp; Production</span>
+    <span class="eyebrow reveal" style="display:block;">Case study · Game &amp; UX Design</span>
     <h1 class="reveal" style="transition-delay:.06s;">Beamdown<span class="accent">.</span></h1>
-    <p class="sub reveal" style="transition-delay:.12s;">An action/adventure boss rush where you beam down to dying planets, fight through their beasties, and purify each one in a boss fight. A 30-person student capstone I helped lead from a pitch to a public Steam launch.</p>
+    <p class="sub reveal" style="transition-delay:.12s;">An action/adventure boss rush where you beam down to dying planets, fight through their beasties, and purify each one in a boss fight. I owned combat, enemy, and level design — the decisions that determine whether a player can actually read a fight.</p>
 
     <div class="cs-meta reveal" style="transition-delay:.16s;">
-      <div><div class="m-lbl">Role</div><div class="m-val">Lead Designer &amp; Production<br/>Coordinator · Combat &amp; Level UX</div></div>
+      <div><div class="m-lbl">Role</div><div class="m-val">Lead Designer — Combat,<br/>Enemy &amp; Level Design</div></div>
       <div><div class="m-lbl">Timeline</div><div class="m-val">Aug 2024 –<br/>May 2025</div></div>
       <div><div class="m-lbl">Team</div><div class="m-val">30+<br/>people</div></div>
       <div><div class="m-lbl">Tools</div><div class="m-val">Unity · Figma · ClickUp<br/>· GitHub · Miro</div></div>
@@ -77,14 +77,14 @@
   <div class="wrap cs-grid">
     <div class="reveal"><span class="cs-kicker">My role</span></div>
     <div class="reveal" style="transition-delay:.06s;">
-      <p class="cs-lead">Two jobs, really: make the game readable to the player, and keep thirty people moving in the same direction.</p>
+      <p class="cs-lead">My job was to make sure players understood a fight before it killed them.</p>
       <div class="cs-body">
-        <p>The player-facing half was the part I cared about most. A boss rush lives or dies on legibility: you have to understand what a planet is teaching you before it tests you on it, read an attack in the half-second you have to react, and always know where the fight is. So grunt areas became the tutorial for each boss, lighting and layout did the wayfinding, and the core loop got redrawn until anyone could read it at a glance.</p>
-        <p>The other half was leading the design team from pre-production through launch — setting the pillars, and running production so art, engineering, narrative, and QA stayed unblocked all the way to a public Steam release.</p>
+        <p>I set the combat, enemy, and level design for the whole game — how a fight feels moment to moment, what each enemy is there to teach, and how a level tells you where to go without ever putting a marker on screen.</p>
+        <p>A boss rush lives or dies on legibility. You have to understand what a planet is teaching you before it tests you on it, read an attack in the half-second you have to react, and always know where the fight is. Almost every decision on this project came back to that.</p>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto;margin-top:22px"><img src="assets/beamdown/title-card.jpg" alt="Beamdown title card — An Action/Adventure Boss Rush Inspired Experience" style="width:100%;height:auto" /></div>
       <div class="cs-stats" style="margin-top:24px;">
-        <div class="stat"><div class="stat-n">30+</div><div class="stat-l">People coordinated across disciplines</div></div>
+        <div class="stat"><div class="stat-n">3</div><div class="stat-l">Player-experience pillars every design call got checked against</div></div>
         <div class="stat"><div class="stat-n">Steam</div><div class="stat-l">Released free-to-play, Mar 2025</div></div>
         <div class="stat"><div class="stat-n">83%</div><div class="stat-l">Positive Steam reviews</div></div>
       </div>
@@ -95,10 +95,10 @@
 <!-- PROBLEM -->
 <section class="cs-section">
   <div class="wrap cs-grid">
-    <div class="reveal"><span class="cs-kicker">The problem</span><h2 class="cs-h">Keep thirty people — and one vision — moving together.</h2></div>
+    <div class="reveal"><span class="cs-kicker">The problem</span><h2 class="cs-h">A boss rush is unreadable by default.</h2></div>
     <div class="reveal cs-body" style="transition-delay:.06s;">
-      <p>A capstone team this size drifts fast without a shared design north star and a production rhythm people actually trust. I had to hold the creative vision steady while unblocking a large, cross-discipline team against a very real ship date.</p>
-      <p>So I split the job in two: give everyone a small set of pillars to design against, and run a production system tight enough that no one sat waiting on a decision.</p>
+      <p>In a boss rush the player meets an unfamiliar mechanic and a health bar at the same moment. If they can't tell what the boss is doing, why they just died, or where the fight even is, difficulty stops reading as a challenge and starts reading as unfair — and they quit.</p>
+      <p>So the real design problem was legibility. Teach a mechanic before the boss examines the player on it. Make every attack readable in the half-second there is to react. Never let anyone wonder where to go next. Get those right and a hard game feels fair; get them wrong and no amount of balancing saves it.</p>
     </div>
   </div>
 </section>
@@ -109,10 +109,10 @@
     <div class="reveal"><span class="cs-kicker">Goals</span><h2 class="cs-h">What Beamdown had to do.</h2></div>
     <div class="reveal" style="transition-delay:.06s;">
       <ul class="cs-list">
-        <li><b>Set clear pillars</b>Give the team Combat, Enemy, and Level Design pillars to check every decision against.</li>
-        <li><b>Make combat feel powerful</b>Snappy, engaging fights where augments genuinely make the player feel strong.</li>
-        <li><b>Make each planet ours</b>A distinct mechanic and boss per planet, so it never feels like every other game.</li>
-        <li><b>Ship it on Steam</b>Drive a 30-person team to a complete, launch-ready public build on time.</li>
+        <li><b>Make combat feel powerful</b>Snappy, engaging fights, and augments that visibly change how you play — the player should feel the upgrade, not read about it.</li>
+        <li><b>Teach before you test</b>Grunt areas introduce a planet's mechanic so the boss room can examine the player on something they've already met.</li>
+        <li><b>Raise difficulty, not the wall</b>Every enemy should make a fight harder, never impossible. Losing has to feel explainable.</li>
+        <li><b>Never lose the player</b>Lighting and layout answer "where do I go" and "what matters here" without a waypoint.</li>
       </ul>
     </div>
   </div>
@@ -121,15 +121,15 @@
 <!-- PROCESS -->
 <section class="cs-section">
   <div class="wrap">
-    <div class="reveal" style="max-width:640px;"><span class="cs-kicker">Process</span><h2 class="cs-h">From a pitch to a launched game.</h2></div>
+    <div class="reveal" style="max-width:640px;"><span class="cs-kicker">Process</span><h2 class="cs-h">Designing a game you can read.</h2></div>
 
     <div class="j-entry reveal" style="border-bottom:1px solid var(--line);">
       <div class="j-text">
-        <h3 style="font-size:clamp(22px,3vw,30px);">1 · Set the design pillars</h3>
+        <h3 style="font-size:clamp(22px,3vw,30px);">1 · Wrote the pillars as player-experience statements</h3>
         <div class="cs-body">
-          <p>Before anyone built anything, I set three pillars so every decision had something to check against: combat had to be snappy, engaging, and make you feel powerful; every enemy had to make a fight harder, not impossible; and every planet had to feel like <i>ours</i>, not like every other game.</p>
-          <p>These stayed on the wall the whole project — when a call got fuzzy, we took it back to the pillars.</p>
-          <p>Three is a deliberate number. The point of writing pillars down is to have something to lose arguments to: when two good ideas competed, the pillars decided it instead of whoever talked longest. On a thirty-person team that is the difference between a lot of options and a lot of drift.</p>
+          <p>Before anything got built I wrote three pillars, and I wrote every one of them from the player's side of the screen rather than the team's. Not "ship a combat system" — <i>combat needs to be snappy, engaging, and fun.</i> Not "build levels" — <i>use lighting and other level design tropes to make sure the player knows where to go and what is important.</i></p>
+          <p>The enemy pillar opens with a question instead of a requirement: <i>Boss design is #1. What is the experience of fighting each boss?</i> That framing did a lot of work later — it meant every enemy argument started from what the fight feels like, not from stat blocks.</p>
+          <p>Three is deliberate. The point of writing pillars down is to have something to lose arguments to: when two good ideas competed, the pillars decided it rather than whoever talked longest.</p>
         </div>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/beamdown/design-pillars.jpg" alt="Design pillars for Beamdown — Combat Design, Enemy Design, and Level Design, each with three principles" style="width:100%;height:auto" /></div>
@@ -149,11 +149,11 @@
 
     <div class="j-entry reveal" style="border-bottom:1px solid var(--line);">
       <div class="j-text">
-        <h3 style="font-size:clamp(22px,3vw,30px);">3 · Designed levels around the bosses</h3>
+        <h3 style="font-size:clamp(22px,3vw,30px);">3 · Used the level to do the teaching</h3>
         <div class="cs-body">
-          <p>Grunt areas are short but rich — lighting and layout point the player toward what matters, and every boss room reflects the mechanic that planet has been teaching. Boss areas were always the number-one priority; the run up to them exists to set them up.</p>
-          <p>This is the top-down map for the first grunt area: platforms, valves, logbooks, a key-and-gate, a mini-boss, and the path that funnels you toward the fight.</p>
-          <p>Every planet got mapped on paper before anything got built in Unity, because moving a gate on a printout costs nothing and moving it in engine costs an afternoon of someone else's week.</p>
+          <p>Grunt areas are short in player time but dense on purpose. Lighting and layout carry the wayfinding, so the player is pulled toward what matters instead of being told. Then every boss room reflects the mechanic that planet has spent the last few minutes teaching — the fight is the exam, and the level was the lesson.</p>
+          <p>You can read the whole intent off this map. The player spawns alone at the far end, so the first thing that happens is movement. Trenches close off the wrong answers. Valves and a key-and-gate slow the critical path just enough to make the space feel deliberate. Logbooks sit slightly off it, so story is a reward for curiosity and never a tax on people who just want to fight. A mini-boss lands before the real one as a rehearsal.</p>
+          <p>Every planet got mapped on paper before anything got built in Unity — moving a gate on a printout costs nothing, and moving it in engine costs an afternoon of someone else's week.</p>
         </div>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/beamdown/level-map.jpg" alt="Top-down map for Beamdown's first grunt area, with a key marking enemies, platforms, valves, stairs, chests, a breakable pillar, and a mini-boss" style="width:100%;height:auto" /></div>
@@ -161,10 +161,10 @@
 
     <div class="j-entry reveal">
       <div class="j-text">
-        <h3 style="font-size:clamp(22px,3vw,30px);">4 · Coordinated a 30-person team to ship</h3>
+        <h3 style="font-size:clamp(22px,3vw,30px);">4 · Protected the design all the way to ship</h3>
         <div class="cs-body">
-          <p>I ran production in ClickUp — scoping, sequencing, and tracking deliverables across design, art, engineering, narrative, and QA so nothing stalled waiting on someone else. Boards stayed honest about what was in progress, in review, and done.</p>
-          <p>Protecting scope is what turned a thirty-person capstone into a finished game on Steam instead of an unfinished demo.</p>
+          <p>Design decisions only count if they survive production. I ran the board so the player-facing work — boss rooms first, then the levels teaching into them — kept its place in the schedule instead of being the thing that got cut when time ran short.</p>
+          <p>Boss areas were the number-one priority in the pillars, so they were the number-one priority in the plan. That's the whole reason the teaching-then-testing structure made it into the shipped game rather than staying a nice diagram.</p>
         </div>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/beamdown/production.png" alt="Beamdown production board in ClickUp — To Do, In Progress, Waiting, Review, and 55 Complete tasks across the team" style="width:100%;height:auto" /></div>
@@ -175,7 +175,7 @@
 <!-- PULLQUOTE -->
 <section class="cs-section">
   <div class="wrap">
-    <p class="cs-pull reveal">Leading design on a thirty-person team taught me the schedule is a design tool — what ships is decided by what you protect.</p>
+    <p class="cs-pull reveal">A hard game only feels fair when the player can see why they died.</p>
   </div>
 </section>
 
@@ -184,9 +184,9 @@
   <div class="wrap cs-grid">
     <div class="reveal"><span class="cs-kicker">Outcome &amp; reflection</span><h2 class="cs-h">What shipped, and what I learned.</h2></div>
     <div class="reveal cs-body" style="transition-delay:.06s;">
-      <p>Beamdown launched publicly on Steam with an 83% positive rating — a complete action/adventure boss rush built by a thirty-person team I helped lead from a pitch to release.</p>
-      <p>The biggest lesson was that on a team this size, clarity is the multiplier. A short set of pillars, a loop anyone could read at a glance, and a production rhythm people trusted did more for the final game than any single feature.</p>
-      <p>The other lesson was about volume. The pillars, the loop, and the maps all exist because generating options is cheap and committing early is expensive — so we made a lot of them, then used the pillars to throw most of them away.</p>
+      <p>Beamdown launched publicly on Steam with an 83% positive rating — a complete action/adventure boss rush, difficult on purpose, that players stuck with.</p>
+      <p>The lesson I kept is that legibility is a feature, and it's cheaper than balance. Almost everything that made the game feel fair was decided before a single value got tuned: what the level teaches, what the boss asks, and whether the player can see the difference. Tuning numbers can't rescue a fight the player can't read.</p>
+      <p>The other lesson was about volume. The pillars, the loop, and the maps exist because generating options is cheap and committing early is expensive — so I made a lot of them, then used the pillars to throw most of them away.</p>
     </div>
   </div>
 </section>
