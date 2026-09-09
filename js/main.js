@@ -2,6 +2,76 @@
    QUIN RICHARDS — shared site behavior
    ========================================================== */
 
+/* ==========================================================
+   THEME — light / dark, site-wide.
+   The toggle is injected into every nav so no page has to carry it.
+   Choice persists in localStorage ('qrTheme', shared with cue.html);
+   until someone picks a side we follow the OS.
+   The <head> script sets data-theme early so there's no flash.
+   ========================================================== */
+(function () {
+  var KEY = 'qrTheme';
+  var SUN = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>';
+  var MOON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>';
+
+  function stored() {
+    try { var t = localStorage.getItem(KEY); return (t === 'dark' || t === 'light') ? t : null; }
+    catch (e) { return null; }
+  }
+  function system() {
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
+  function effective() { return stored() || system(); }
+
+  var btn = document.createElement('button');
+  btn.className = 'theme-toggle';
+  btn.type = 'button';
+  btn.title = 'Switch theme';
+
+  function paint(mode) {
+    btn.innerHTML = mode === 'dark' ? SUN : MOON;
+    btn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  function apply(mode, remember) {
+    document.documentElement.setAttribute('data-theme', mode);
+    paint(mode);
+    if (remember) { try { localStorage.setItem(KEY, mode); } catch (e) {} }
+  }
+
+  paint(effective());
+  btn.addEventListener('click', function () {
+    apply(effective() === 'dark' ? 'light' : 'dark', true);
+  });
+
+  /* follow the OS as long as the visitor hasn't chosen for themselves */
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange = function (e) { if (!stored()) paint(e.matches ? 'dark' : 'light'); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  }
+
+  /* drop it in beside the Resume pill */
+  var cta = document.querySelector('.nav-inner .nav-cta');
+  var host = cta ? cta.parentNode : document.querySelector('.nav-inner');
+  if (host) {
+    if (host.classList && !host.classList.contains('nav-right')) host.classList.add('nav-right');
+    var burger = host.querySelector('.nav-burger');
+    if (burger) host.insertBefore(btn, burger); else host.appendChild(btn);
+  }
+
+  /* Resume moves into the mobile menu, since the header pill hides on small screens */
+  var links = document.querySelector('.nav-links');
+  if (links && !links.querySelector('.nav-resume')) {
+    var r = document.createElement('button');
+    r.type = 'button';
+    r.className = 'nav-resume';
+    r.setAttribute('data-resume', '');
+    r.textContent = 'Resume';
+    links.appendChild(r);
+  }
+})();
+
 /* ---------- mobile nav ---------- */
 (function () {
   var burger = document.querySelector('.nav-burger');
@@ -12,6 +82,27 @@
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
+})();
+
+/* ==========================================================
+   MISSING ART — if an image hasn't been dropped in yet, fall back to
+   the poster-style placeholder instead of a broken-image icon.
+   ========================================================== */
+(function () {
+  function placehold(img) {
+    var frame = img.parentNode;
+    if (!frame || frame.querySelector('.ph')) return;
+    var ph = document.createElement('div');
+    ph.className = 'ph';
+    ph.textContent = img.getAttribute('alt') || 'Image coming soon';
+    img.remove();
+    frame.appendChild(ph);
+  }
+  document.querySelectorAll('.j-media img, .cs-shot img, .cs-hero-img img, .qcard .qimg img, .t5img img, .entry-thumb img')
+    .forEach(function (img) {
+      if (img.complete && img.naturalWidth === 0) placehold(img);
+      else img.addEventListener('error', function () { placehold(img); });
+    });
 })();
 
 /* ---------- reveal on scroll ---------- */
@@ -49,6 +140,19 @@
   var lastFocus = null;
   var loaded = false;
 
+  // Phones (iOS Safari especially) won't render a PDF inside an iframe — they
+  // just show an empty box. On narrow screens hand over a real link instead.
+  function smallScreen() {
+    return window.matchMedia && window.matchMedia('(max-width: 760px)').matches;
+  }
+  function showLinkCard() {
+    frame.style.display = 'none';
+    missing.style.display = 'grid';
+    missing.innerHTML =
+      '<span>Résumé — one page, PDF</span>' +
+      '<a class="modal-dl" href="' + RESUME_SRC + '" target="_blank" rel="noopener">Open résumé</a>';
+  }
+
   function open() {
     lastFocus = document.activeElement;
     modal.classList.add('open');
@@ -56,8 +160,9 @@
     if (!loaded) {
       // check the pdf exists before pointing the iframe at it
       fetch(RESUME_SRC, { method: 'HEAD' }).then(function (r) {
-        if (r.ok) { frame.src = RESUME_SRC; frame.style.display = 'block'; missing.style.display = 'none'; }
-        else { showMissing(); }
+        if (!r.ok) { showMissing(); return; }
+        if (smallScreen()) { showLinkCard(); return; }
+        frame.src = RESUME_SRC; frame.style.display = 'block'; missing.style.display = 'none';
       }).catch(showMissing);
       loaded = true;
     }

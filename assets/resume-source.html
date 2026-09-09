@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Quin Richards — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @page { size: letter; margin: 0.36in 0.5in; }
+  :root{
+    --navy:#1B2444;
+    --ink:#211C17;
+    --muted:#5F5A52;
+    --line:#C9CEDD;
+    --display:"Jost",-apple-system,system-ui,sans-serif;
+    --body:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    font-size:8.75pt;
+    line-height:1.31;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ---------- masthead ---------- */
+  .name{
+    font-family:var(--display);font-weight:800;
+    font-size:23pt;line-height:1;letter-spacing:-.015em;
+    color:var(--navy);margin:0;
+  }
+  .title{
+    font-family:var(--display);font-weight:600;
+    font-size:9.5pt;letter-spacing:.19em;text-transform:uppercase;
+    color:var(--ink);margin:6px 0 0;
+  }
+  .contact{
+    font-family:var(--display);font-weight:500;
+    font-size:8.4pt;letter-spacing:.012em;color:var(--muted);
+    margin:7px 0 0;
+  }
+  .contact a{color:var(--muted);text-decoration:none;}
+  .contact .dot{color:var(--line);padding:0 5px;}
+
+  .summary{
+    margin:9px 0 0;font-size:8.85pt;line-height:1.38;color:var(--ink);
+    max-width:none;
+  }
+
+  /* ---------- section headings ---------- */
+  h2{
+    font-family:var(--display);font-weight:700;
+    font-size:8.4pt;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--navy);
+    margin:11px 0 0;padding:0 0 3.5px;
+    border-bottom:1.1pt solid var(--navy);
+  }
+
+  /* ---------- experience ---------- */
+  .job{margin-top:6.5px;break-inside:avoid;}
+  .job-head{
+    display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  }
+  .job-title{
+    font-family:var(--display);font-weight:700;font-size:9.6pt;
+    color:var(--ink);letter-spacing:-.005em;
+  }
+  .job-title .org{color:var(--navy);}
+  .job-title .sep{color:var(--muted);font-weight:500;padding:0 3px;}
+  .job-title .role{font-weight:600;}
+  .job-date{
+    font-family:var(--display);font-weight:600;font-size:8pt;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+    white-space:nowrap;flex:none;
+  }
+  ul{margin:3px 0 0;padding:0;list-style:none;}
+  li{position:relative;padding-left:11px;margin:1.8px 0;line-height:1.33;}
+  li::before{
+    content:"";position:absolute;left:1px;top:.47em;
+    width:3.4px;height:3.4px;border-radius:50%;background:var(--navy);
+  }
+  .nda{
+    font-family:var(--display);font-weight:600;font-size:7pt;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    border:.8pt solid var(--line);border-radius:99px;padding:1px 6px;
+    margin-left:5px;white-space:nowrap;position:relative;top:-1px;
+  }
+
+  /* ---------- projects ---------- */
+  .projects{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:6px 26px;margin-top:7px;
+  }
+  .proj{break-inside:avoid;}
+  .proj b{
+    font-family:var(--display);font-weight:700;font-size:9.2pt;
+    color:var(--navy);display:block;
+  }
+  .proj span{display:block;line-height:1.34;margin-top:1px;}
+
+  /* ---------- education ---------- */
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:6px 26px;margin-top:7px;}
+  .edu div b{font-family:var(--display);font-weight:700;font-size:9.2pt;color:var(--navy);}
+  .edu div span{display:block;color:var(--ink);}
+
+  /* ---------- skills ---------- */
+  .skills{margin-top:7px;}
+  .skill-row{display:grid;grid-template-columns:78px 1fr;gap:9px;margin:2.8px 0;align-items:baseline;}
+  .skill-row .k{
+    font-family:var(--display);font-weight:700;font-size:7.4pt;
+    letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+  }
+  .skill-row .v{line-height:1.38;}
+  .skill-row .v .d{color:var(--line);padding:0 3px;}
+</style>
+</head>
+<body>
+
+<p class="name">Quin Richards</p>
+<p class="title">UX &amp; Game Designer</p>
+<p class="contact">Los Angeles, CA<span class="dot">·</span>quinrdesign@gmail.com<span class="dot">·</span>linkedin.com/in/quin-richards<span class="dot">·</span>quinrichards.com</p>
+
+<p class="summary">UX and game designer who turns undefined problems into shipped experiences. I generate a lot of options, put them in front of players and users, and iterate from sketch to prototype to shipped — across game UX, interactive product design, and live production. Currently consulting on UX for two unannounced titles at Digital Eclipse.</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title"><span class="org">Digital Eclipse</span><span class="sep">—</span><span class="role">UX Design Consultant</span><span class="nda">Under NDA</span></span>
+    <span class="job-date">Jul 2026 – Present</span>
+  </div>
+  <ul>
+    <li>Consulting on UX for two unannounced titles close to release — one single-player, one multiplayer. Work spans menus, settings, core gameplay decisions, and VFX / impact moments across both.</li>
+    <li>Author the UX documentation behind those decisions, build the user flows, and assist in playtests with players selected by the QA lead.</li>
+    <li>Fight for the player through launch — arguing the player's case against schedule, scope, and technical constraints.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title"><span class="org">Stellar Agency</span><span class="sep">—</span><span class="role">UX Designer</span></span>
+    <span class="job-date">Jul 2026 – Present</span>
+  </div>
+  <ul>
+    <li>Leading an early prototype for a new platform for freelancers, proving the core flow works before it scales.</li>
+    <li>Created a wide variety of screen flows and use cases to pressure-test the concept from several angles and showcase it — end-to-end product UX, from framing the problem to iterating on the structure that held up.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title"><span class="org">The Walt Disney Company</span><span class="sep">—</span><span class="role">UX Designer &amp; Rapid Prototype Engineer</span></span>
+    <span class="job-date">Oct 2025 – Apr 2026</span>
+  </div>
+  <ul>
+    <li>Identified an unmet workflow need for writers across Disney's creative banners through self-initiated research.</li>
+    <li>Explored several directions for the tool, then designed and built the prototype that was greenlit and company-backed within weeks of first pitch.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title"><span class="org">Beamdown</span><span class="sep">—</span><span class="role">Lead Designer &amp; Production Coordinator</span></span>
+    <span class="job-date">Aug 2024 – May 2025</span>
+  </div>
+  <ul>
+    <li>Led design across a 30+ person team from pre-production through public Steam launch — set the design pillars and core loop, then owned combat, boss, and level design against them.</li>
+    <li>Ran production across design, art, engineering, narrative, and QA so no discipline sat blocked on a decision.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title"><span class="org">University of Utah Esports</span><span class="sep">—</span><span class="role">Program Coordinator &amp; Broadcast Producer</span></span>
+    <span class="job-date">Aug 2022 – May 2025</span>
+  </div>
+  <ul>
+    <li>Coordinated live tournament broadcasts for a 20–30 person team, streaming regional events to a live Twitch audience — designing what the spectator sees and when.</li>
+    <li>Built and coached a competitive Rainbow Six Siege program at Santa Barbara City College.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title"><span class="org">Riot Games</span><span class="sep">—</span><span class="role">Research Team Lead (student research program)</span></span>
+    <span class="job-date">Jun 2018 – Jul 2018</span>
+  </div>
+  <ul>
+    <li>Led a student research team feeding structured findings into League of Legends development; coordinated deliverables across QA, social, and marketing and delivered a final competitive-analysis piece.</li>
+  </ul>
+</div>
+
+<h2>Selected Projects</h2>
+<div class="projects">
+  <div class="proj">
+    <b>Eldritch Confection</b>
+    <span>Game, Combat &amp; UX Designer — 2D side-scroller shipped with a 5-person team in one month. Owned the weekly playtest survey (~25 responses) and turned the patterns in it into combat changes.</span>
+  </div>
+  <div class="proj">
+    <b>Cue</b>
+    <span>Concept &amp; Interaction Designer — eyes-free controls for headphones you can't see. A gesture language, paired haptic + audio cues, and a working browser prototype.</span>
+  </div>
+  <div class="proj">
+    <b>My Brother's Lightkeeper</b>
+    <span>Designer, Narrative &amp; Producer — two-person narrative sailing game about community and hope; owned design, UX, narrative, art, and audio.</span>
+  </div>
+  <div class="proj">
+    <b>Project Futura</b>
+    <span>Designer — first-person narrative platforming puzzle game, currently in prototype with a small indie team.</span>
+  </div>
+</div>
+
+<h2>Education</h2>
+<div class="edu">
+  <div><b>University of Utah</b><span>B.S., Game Development</span></div>
+  <div><b>Santa Barbara City College</b><span>Psychology &amp; Philosophy</span></div>
+</div>
+
+<h2>Skills &amp; Tools</h2>
+<div class="skills">
+  <div class="skill-row">
+    <span class="k">Design</span>
+    <span class="v">UX / UI<span class="d">·</span>User flows &amp; information hierarchy<span class="d">·</span>Hierarchy of controls<span class="d">·</span>Accessibility<span class="d">·</span>Game &amp; systems design<span class="d">·</span>Narrative design<span class="d">·</span>Rapid prototyping<span class="d">·</span>User research &amp; playtesting</span>
+  </div>
+  <div class="skill-row">
+    <span class="k">Production</span>
+    <span class="v">Cross-disciplinary collaboration<span class="d">·</span>Project coordination<span class="d">·</span>Scheduling &amp; scope<span class="d">·</span>Live broadcast production</span>
+  </div>
+  <div class="skill-row">
+    <span class="k">Tools</span>
+    <span class="v">Figma<span class="d">·</span>Miro<span class="d">·</span>Unity<span class="d">·</span>Unreal Engine 5<span class="d">·</span>Cursor<span class="d">·</span>Jira<span class="d">·</span>Perforce<span class="d">·</span>Asana<span class="d">·</span>GitHub<span class="d">·</span>Notion<span class="d">·</span>OBS</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<script>(function(){try{var t=localStorage.getItem('qrTheme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -48,7 +49,7 @@
           <button class="ctl" id="prevBtn" aria-label="Previous clip" type="button"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
           <button class="ctl" id="playBtn" aria-label="Play or pause" type="button"><svg id="playIcon" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button>
           <button class="ctl" id="nextBtn" aria-label="Next clip" type="button"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
-          <button class="ctl" id="muteBtn" aria-label="Unmute clip" type="button" style="width:auto;padding:0 16px;gap:8px;border-radius:999px;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9zm11.5 3a4 4 0 00-2.5-3.7v7.4A4 4 0 0015.5 12z"/></svg><span id="muteTxt">Unmute</span></button>
+          <button class="ctl" id="muteBtn" aria-label="Unmute clip" type="button" style="width:auto;padding:0 16px;gap:8px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9zm11.5 3a4 4 0 00-2.5-3.7v7.4A4 4 0 0015.5 12z"/></svg><span id="muteTxt">Unmute</span></button>
           <span class="now" id="nowPlaying">—</span>
         </div>
       </div>

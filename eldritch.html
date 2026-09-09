@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<script>(function(){try{var t=localStorage.getItem('qrTheme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -80,7 +81,7 @@
       <p class="cs-lead">I designed how it feels to fight — then let weekly playtests tell me where I was wrong.</p>
       <div class="cs-body">
         <p>I owned the core combat experience and the basic UI, and I ran the user-research side — pulling feedback out of weekly playtests and turning it into the next round of changes.</p>
-        <p>On a timeline this short, that research loop <i>was</i> the design process. There was no time to fall in love with a first idea, so I didn't.</p>
+        <p>On a timeline this short, that research loop <i>was</i> the design process. There was no time to fall in love with a first idea, so I didn't — every week the game got a version, players got a survey, and the survey decided what changed next.</p>
       </div>
       <div class="cs-stats" style="margin-top:24px;">
         <div class="stat"><div class="stat-n">~1 mo</div><div class="stat-l">Concept to shipped, start to finish</div></div>
@@ -132,29 +133,34 @@
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/eldritch/core-loop.png" alt="Eldritch Confection core loop — run to stage, fight enemies, kill enemies, eat remains, repeat" style="width:100%;height:auto" /></div>
     </div>
 
-    <div class="j-entry reveal" style="border-bottom:1px solid var(--line);">
+    <div class="j-entry reveal" style="border-bottom:1px solid var(--line);grid-template-columns:1fr;">
       <div class="j-text">
-        <h3 style="font-size:clamp(22px,3vw,30px);">2 · Mocked up the UI</h3>
+        <h3 style="font-size:clamp(22px,3vw,30px);">2 · UI: mockup &rarr; shipped</h3>
         <div class="cs-body">
-          <p>Before the final HUD, I mocked up the basics — hunger and health up top, the ability framing, the "Cu is hungry" beat — to settle the layout and priorities early, while they were still cheap to change.</p>
-        </div>
-      </div>
-      <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/eldritch/ui-mockup.png" alt="Early Eldritch Confection UI mockup — a hunger bar, a health meter, and a 'Cu is hungry' enemy select" style="width:100%;height:auto" /></div>
-    </div>
-
-    <div class="j-entry reveal" style="border-bottom:1px solid var(--line);">
-      <div class="j-text">
-        <h3 style="font-size:clamp(22px,3vw,30px);">3 · Designed the game UX</h3>
-        <div class="cs-body">
+          <p>Before the final HUD I mocked up the basics — hunger and health up top, the ability framing, the "Cu is hungry" beat — to settle layout and priority early, while they were still cheap to move.</p>
           <p>Then I mapped the on-screen UX so the eat-and-power system reads instantly: a health bar, a power bar that fills from the candy each enemy drops, and a candy counter. Mint enemies feed the dash, chocolate bunnies the projectile, gummy bears the shield — the UI makes that legible in the middle of a fight.</p>
+          <p>Here they are side by side. Same information, re-ranked — which is the whole argument for mocking it up first.</p>
+        </div>
+        <div class="opt-set two">
+          <figure class="opt" style="margin:0;">
+            <div class="opt-img"><img src="assets/eldritch/ui-mockup.png" alt="Early Eldritch Confection UI mockup — a hunger bar, a health meter, and a 'Cu is hungry' enemy select" /></div>
+            <div class="opt-n">Option 01 · First pass</div>
+            <p class="opt-t">The mockup</p>
+            <p>Hunger up top, health beside it, the "Cu is hungry" beat. Cheap to argue about while it was still rectangles — which is exactly when you want the argument.</p>
+          </figure>
+          <figure class="opt is-final" style="margin:0;">
+            <div class="opt-img"><img src="assets/eldritch/game-ux.jpg" alt="Annotated Eldritch Confection gameplay — health bar, power bar, enemy types, Cu, and candy counter called out on a live screenshot" /></div>
+            <div class="opt-n">Option 02 · What shipped</div>
+            <p class="opt-t">The annotated UX</p>
+            <p>Health, a power bar that fills from dropped candy, and a counter — each enemy type tied to the ability it feeds. It won because it makes the trade readable mid-fight, not just readable on a slide.</p>
+          </figure>
         </div>
       </div>
-      <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/eldritch/game-ux.jpg" alt="Annotated Eldritch Confection gameplay — health bar, power bar, enemy types, Cu, and candy counter called out on a live screenshot" style="width:100%;height:auto" /></div>
     </div>
 
     <div class="j-entry reveal">
       <div class="j-text">
-        <h3 style="font-size:clamp(22px,3vw,30px);">4 · Ran the weekly playtest loop</h3>
+        <h3 style="font-size:clamp(22px,3vw,30px);">3 · Ran the weekly playtest loop</h3>
         <div class="cs-body">
           <p>Every week we put the game in front of players, and I owned the research side — writing the surveys, running the sessions, and turning what came back into the next round of changes.</p>
           <p>The questions were pointed on purpose. This beta form asked players to react to the art direction and the overall gameplay, then drilled into specifics: how the dashing mechanic felt, whether the candy-power mechanic read clearly, and whether enemies took the right amount of time to kill. It even handed balance calls straight to players — like how many enemies you should have to eat before you earn the dash.</p>
@@ -181,6 +187,7 @@
     <div class="reveal cs-body" style="transition-delay:.06s;">
       <p>Eldritch Confection shipped on itch.io as a complete game — built by five people in about a month, with combat that got there because we tested it every week and actually changed things based on what we saw.</p>
       <p>The takeaway I kept: on a tight timeline, a real research loop beats a bigger plan. Listening weekly is what kept us polishing the right things instead of the wrong ones.</p>
+      <p>It also made me quick at throwing work away. When you know another version ships in seven days, a rejected idea stops feeling like a loss and starts feeling like information.</p>
     </div>
   </div>
 </section>

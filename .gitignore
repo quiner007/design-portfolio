@@ -7,3 +7,7 @@ Thumbs.db
 *.swp
 # Dependencies (not used, kept for safety)
 node_modules/
+
+# Application docs — kept local, not published to the site
+cover-letter-riot.md
+cover-letter-riot.pdf

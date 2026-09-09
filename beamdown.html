@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<script>(function(){try{var t=localStorage.getItem('qrTheme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -127,6 +128,7 @@
         <div class="cs-body">
           <p>Before anyone built anything, I set three pillars so every decision had something to check against: combat had to be snappy, engaging, and make you feel powerful; every enemy had to make a fight harder, not impossible; and every planet had to feel like <i>ours</i>, not like every other game.</p>
           <p>These stayed on the wall the whole project — when a call got fuzzy, we took it back to the pillars.</p>
+          <p>Three is a deliberate number. The point of writing pillars down is to have something to lose arguments to: when two good ideas competed, the pillars decided it instead of whoever talked longest. On a thirty-person team that is the difference between a lot of options and a lot of drift.</p>
         </div>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/beamdown/design-pillars.jpg" alt="Design pillars for Beamdown — Combat Design, Enemy Design, and Level Design, each with three principles" style="width:100%;height:auto" /></div>
@@ -138,6 +140,7 @@
         <div class="cs-body">
           <p>The loop is simple and readable on purpose: beam down, fight the beasties, purify the planet in a boss fight, then level up your stats — and beam down again. Bosses are the star, so grunt encounters exist to teach a planet's mechanic before you're tested on it.</p>
           <p>Augments feed that loop — each one should improve how the game plays and make the player feel stronger the next time down.</p>
+          <p>The diagram got redrawn until it fit in four boxes. That was the test: if a teammate couldn't read the loop at a glance, it wasn't finished — a diagram that needs explaining isn't doing its job.</p>
         </div>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/beamdown/combat-loop.jpg" alt="Beamdown combat loop — Beam Down, Fight (Beasties), Purify (Boss Fight), Level Up (Stat), repeat" style="width:100%;height:auto" /></div>
@@ -149,6 +152,7 @@
         <div class="cs-body">
           <p>Grunt areas are short but rich — lighting and layout point the player toward what matters, and every boss room reflects the mechanic that planet has been teaching. Boss areas were always the number-one priority; the run up to them exists to set them up.</p>
           <p>This is the top-down map for the first grunt area: platforms, valves, logbooks, a key-and-gate, a mini-boss, and the path that funnels you toward the fight.</p>
+          <p>Every planet got mapped on paper before anything got built in Unity, because moving a gate on a printout costs nothing and moving it in engine costs an afternoon of someone else's week.</p>
         </div>
       </div>
       <div class="cs-shot" style="aspect-ratio:auto"><img src="assets/beamdown/level-map.jpg" alt="Top-down map for Beamdown's first grunt area, with a key marking enemies, platforms, valves, stairs, chests, a breakable pillar, and a mini-boss" style="width:100%;height:auto" /></div>
@@ -179,8 +183,9 @@
   <div class="wrap cs-grid">
     <div class="reveal"><span class="cs-kicker">Outcome &amp; reflection</span><h2 class="cs-h">What shipped, and what I learned.</h2></div>
     <div class="reveal cs-body" style="transition-delay:.06s;">
-      <p>Beamdown launched publicly on Steam with an 87% positive rating — a complete action/adventure boss rush built by a thirty-person team I helped lead from a pitch to release.</p>
+      <p>Beamdown launched publicly on Steam with an 83% positive rating — a complete action/adventure boss rush built by a thirty-person team I helped lead from a pitch to release.</p>
       <p>The biggest lesson was that on a team this size, clarity is the multiplier. A short set of pillars, a loop anyone could read at a glance, and a production rhythm people trusted did more for the final game than any single feature.</p>
+      <p>The other lesson was about volume. The pillars, the loop, and the maps all exist because generating options is cheap and committing early is expensive — so we made a lot of them, then used the pillars to throw most of them away.</p>
     </div>
   </div>
 </section>
