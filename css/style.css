@@ -365,6 +365,30 @@ body.modal-lock{overflow:hidden;}
   .qcard .qmeta{text-align:left;}
 }
 
+
+/* ---------- context dropdown ----------
+   Same content as .ctx-card, tucked away. For work where the paragraphs
+   already carry the story and the detail is a nice-to-have. */
+.ctx-drop{
+  border:1.5px solid var(--line);border-radius:12px;background:var(--paper-2);
+  margin-top:20px;overflow:hidden;
+}
+.ctx-drop > summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
+  min-height:46px;padding:12px 18px;
+  font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);transition:color .18s ease;
+}
+.ctx-drop > summary::-webkit-details-marker{display:none;}
+.ctx-drop > summary::marker{content:"";}
+.ctx-drop > summary::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none;}
+.ctx-drop > summary:hover{color:var(--ink);}
+.ctx-drop[open] > summary{border-bottom:1px solid var(--line);color:var(--ink);}
+.ctx-drop .chev{margin-left:auto;width:15px;height:15px;flex:none;fill:currentColor;opacity:.75;transition:transform .22s ease;}
+.ctx-drop[open] .chev{transform:rotate(180deg);}
+.ctx-drop .ctx-body{padding:15px 18px 18px;display:grid;gap:13px;}
+@media(prefers-reduced-motion:reduce){.ctx-drop .chev{transition:none;}}
+
 /* ---------- context card ----------
    For work that has no case study yet: give the reader the shape of it
    rather than a link to nowhere. */
