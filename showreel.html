@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Showreel — Quin Richards</title>
+<meta name="description" content="Gameplay, dev videos, and level design walkthroughs from Quin Richards's shipped work." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="mark" href="index.html" aria-label="Quin Richards home"><span class="glyph" aria-hidden="true"></span>Quin Richards</a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html" >Home</a>
+      <a href="showreel.html" aria-current="page">Showreel</a>
+      <a href="journal.html" >Design Journal</a>
+      <a href="about.html" >About Me</a>
+      <a href="sidequests.html" >Side Quests</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <button class="nav-cta" data-resume type="button">Résumé</button>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" type="button"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
+    </div>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Now showing</span>
+    <h1 class="reveal" style="transition-delay:.06s">The <span class="accent">Showreel.</span></h1>
+    <p class="sub reveal" style="transition-delay:.12s">Gameplay, dev videos, and level design walkthroughs — the queue rotates on its own, or jump around. Everything here shipped or is on its way.</p>
+  </div>
+</section>
+
+<section class="panel-navy reel-pad" id="reel">
+  <div class="wrap">
+    <div class="reel-layout reveal">
+      <div class="player">
+        <div class="player-frame">
+          <div class="fallback">If the player doesn't load here, your browser or network may be blocking YouTube embeds.<br/><a href="https://www.youtube.com/watch?v=YnClgTMJ9eo" target="_blank" rel="noopener">Open the clip on YouTube ↗</a></div>
+          <div id="yt-mount"></div>
+        </div>
+        <div class="reel-controls">
+          <button class="ctl" id="prevBtn" aria-label="Previous clip" type="button"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+          <button class="ctl" id="playBtn" aria-label="Play or pause" type="button"><svg id="playIcon" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button>
+          <button class="ctl" id="nextBtn" aria-label="Next clip" type="button"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+          <button class="ctl" id="muteBtn" aria-label="Unmute clip" type="button" style="width:auto;padding:0 16px;gap:8px;border-radius:999px;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9zm11.5 3a4 4 0 00-2.5-3.7v7.4A4 4 0 0015.5 12z"/></svg><span id="muteTxt">Unmute</span></button>
+          <span class="now" id="nowPlaying">—</span>
+        </div>
+      </div>
+      <div class="queue" aria-label="Showreel queue">
+        <div class="qh"><span>Queue</span><span id="queuePos">—</span></div>
+        <div id="queueList"></div>
+      </div>
+    </div>
+
+    <div class="reel-sections reveal">
+      <span class="chip" style="pointer-events:none;background:rgba(255,255,255,.08);border-color:transparent;">In the queue:</span>
+      <span class="chip" style="pointer-events:none;">Dev video</span>
+      <span class="chip" style="pointer-events:none;">Trailers</span>
+      <span class="chip" style="pointer-events:none;">Shipped work</span>
+    </div>
+  </div>
+</section>
+
+<section class="journal-sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>About these clips</h2><span class="count">Context</span></div>
+    <p class="reveal" style="max-width:66ch;color:#463d31;font-size:17px;">Every clip here comes from real, shipped work — the Beamdown dev video from our Steam launch, plus the trailers for Eldritch Confection and My Brother's Lightkeeper. For the full written breakdowns of the design behind them, head to the <a href="journal.html" style="color:var(--red);font-weight:600;">Design Journal</a>, or open any case study from <a href="index.html#work" style="color:var(--red);font-weight:600;">the work list</a>.</p>
+  </div>
+</section>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-cta reveal">Let's make something people love. <a href="mailto:quinrdesign@gmail.com">Say hi.</a></p>
+    <div class="foot-links reveal">
+      <a href="mailto:quinrdesign@gmail.com">quinrdesign@gmail.com</a>
+      <button data-resume type="button">Résumé</button>
+      <a href="https://quiner007.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      <a href="https://www.instagram.com/quin_richards/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/quin-richards/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="foot-note">© 2026 Quin Richards</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Résumé">
+  <div class="modal-backdrop"></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2>Quin Richards — Résumé</h2>
+      <div class="modal-actions">
+        <a class="modal-dl" href="assets/resume.pdf" download>Download</a>
+        <button class="modal-x" aria-label="Close résumé" type="button"><svg viewBox="0 0 24 24"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <iframe title="Résumé PDF" style="display:none"></iframe>
+      <div class="modal-missing" style="display:none">Drop your PDF at assets/resume.pdf<br/>and it will appear here.</div>
+    </div>
+  </div>
+</div>
+
+<div class="jukebox" id="jukebox">
+  <button class="jb-btn" id="jbBtn" aria-label="Play music" type="button"><svg id="jbIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+  <button class="jb-skip" id="jbPrev" aria-label="Previous track" type="button"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+  <button class="jb-skip" id="jbNext" aria-label="Next track" type="button"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+  <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="jb-meta"><span class="jb-label">Quintessential</span><span class="jb-track" id="jbTrack">Woody</span></div>
+</div>
+<audio id="ambient" preload="none"></audio>
+
+<script src="js/main.js"></script>
+<script>
+/* SHOWREEL QUEUE — replace/add clips here. id = the YouTube video id. */
+initReel([
+  { id:'YnClgTMJ9eo', title:'Beamdown — Dev Video',              tag:'Dev video · Steam launch' },
+  { id:'5btsOB3cI8g', title:'Eldritch Confection — Trailer',     tag:'Trailer · itch.io' },
+  { id:'eJqGCuiNZU8', title:"My Brother's Lightkeeper — Trailer", tag:'Trailer · itch.io' }
+]);
+</script>
+</body>
+</html>

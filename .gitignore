@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+Thumbs.db
+# Editors
+.vscode/
+.idea/
+*.swp
+# Dependencies (not used, kept for safety)
+node_modules/
