@@ -150,6 +150,28 @@
   .matrix th,.matrix td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14px;}
   .matrix thead th{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);}
   .matrix tbody tr:last-child td{border-bottom:0;} .matrix td:first-child{font-weight:600;}
+
+  /* many doors, one room — the convergence mockup */
+  .mdr{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:clamp(18px,3vw,26px);}
+  .mdr-grid{display:grid;grid-template-columns:1fr 46px 1fr;gap:clamp(12px,2vw,20px);align-items:center;}
+  @media(max-width:760px){.mdr-grid{grid-template-columns:1fr;gap:14px;}}
+  .mdr-lab{font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:11px;}
+  .mdr-doors{display:grid;gap:9px;}
+  .mdr-door{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:11px;background:var(--paper);padding:10px 12px;}
+  .mdr-door .ic{width:28px;height:28px;border-radius:8px;flex:none;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 18%,transparent);}
+  .mdr-door .ic svg{width:15px;height:15px;fill:var(--accent);}
+  .mdr-door b{display:block;font-family:var(--display);font-weight:700;font-size:13px;line-height:1.2;}
+  .mdr-door span{display:block;font-size:12.5px;color:var(--muted);line-height:1.35;margin-top:1px;}
+  .mdr-arrow{display:grid;place-items:center;color:color-mix(in srgb,var(--ink) 32%,transparent);}
+  .mdr-arrow svg{width:24px;height:24px;fill:currentColor;}
+  @media(max-width:760px){.mdr-arrow svg{transform:rotate(90deg);width:20px;height:20px;}}
+  .mdr-room{border:1.5px solid var(--accent);border-radius:13px;background:color-mix(in srgb,var(--accent) 10%,transparent);padding:15px 16px;}
+  .mdr-room .st{font-family:var(--display);font-weight:800;font-size:clamp(17px,2.4vw,21px);letter-spacing:-.01em;line-height:1.1;}
+  .mdr-room .sd{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.4;}
+  .mdr-confirm{display:grid;gap:8px;margin-top:13px;}
+  .mdr-chip{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:7px 12px;}
+  .mdr-chip i{width:7px;height:7px;border-radius:50%;flex:none;font-style:normal;}
+  .mdr-foot{font-size:13px;color:var(--muted);margin:16px 0 0;line-height:1.5;}
   .edge{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;background:var(--surface);padding:16px 18px;margin:18px 0;}
   .edge .et{font-family:var(--display);font-weight:700;font-size:14px;margin-bottom:8px;}
   .edge p{margin:0 0 10px;font-size:14.5px;line-height:1.55;} .edge p:last-child{margin-bottom:0;}
@@ -370,17 +392,47 @@
     <div class="matrix"><table>
       <thead><tr><th>Action</th><th>On-ear gesture</th><th>Voice</th><th>Hands-free</th><th>In the app</th></tr></thead>
       <tbody>
-        <tr><td>Play / pause</td><td>Single tap</td><td>“Hey Siri, pause”</td><td>—</td><td>Tap control</td></tr>
-        <tr><td>Next / previous</td><td>Double / triple tap</td><td>“Skip,” “go back”</td><td>—</td><td>Tap control</td></tr>
-        <tr><td>Noise mode</td><td>Press &amp; hold</td><td>“Turn on Transparency”</td><td>—</td><td>Mode switch</td></tr>
-        <tr><td>Calls / alerts</td><td>Tap to answer</td><td>Siri</td><td>Nod / shake head</td><td>—</td></tr>
+        <tr><td>Play / pause</td><td>Single tap</td><td>“Hey Siri, pause”</td><td>Switch Control · adaptive controller</td><td>Tap control</td></tr>
+        <tr><td>Next / previous</td><td>Double / triple tap</td><td>“Skip,” “go back”</td><td>Switch Control · adaptive controller</td><td>Tap control</td></tr>
+        <tr><td>Noise mode</td><td>Press &amp; hold</td><td>“Turn on Transparency”</td><td>Switch Control, or nod to confirm the voice prompt</td><td>Mode switch</td></tr>
+        <tr><td>Calls / alerts</td><td>Tap to answer</td><td>Siri</td><td>Nod / shake head</td><td>Mirrored call controls</td></tr>
       </tbody>
     </table></div>
     <p class="mut">Voice runs through Siri or Voice Control. Head nod/shake handles calls and notifications with no hands at all. For people who use neither, Switch Control and adaptive controllers (like the Sony Access controller) drive the same actions — and the app mirrors everything, working with VoiceOver and Voice Control.</p>
 
     <h3>3 · The gesture itself is tunable</h3>
     <p>For people who <em>can</em> gesture but need it easier, timing is a setting, not a fixed rule — Apple already exposes <b>Press Speed</b> and <b>Press &amp; Hold Duration</b> for AirPods. Cue makes that first-class: the customization screen slows the multi-tap window and shortens the hold, so triple-tap and press-and-hold still work with tremor, limited dexterity, or one-handed use.</p>
-    <div class="figure"><div class="ph wide"><div><span class="lab">Sketch 5 (optional) — Many doors, one room</span><div class="hint">If you want a fifth sketch: one action (e.g. "Transparency on") reached by gesture, voice, head, and app — showing every path lands in the same place.</div></div></div></div>
+    <div class="figure">
+      <div class="mdr">
+        <div class="mdr-grid">
+          <div>
+            <div class="mdr-lab">Five ways in</div>
+            <div class="mdr-doors">
+        <div class="mdr-door"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V6a2 2 0 114 0v6l2.6.6A3 3 0 0118 15.5V19a2 2 0 01-2 2h-4.6a3 3 0 01-2.4-1.2L6 15.6a1.6 1.6 0 012.3-2.2L9 14z"/></svg></span><div><b>On-ear gesture</b><span>Press &amp; hold the earcup</span></div></div>
+        <div class="mdr-door"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 003-3V6a3 3 0 10-6 0v5a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.9V21h2v-3.1A7 7 0 0019 11z"/></svg></span><div><b>Voice</b><span>“Turn on Transparency”</span></div></div>
+        <div class="mdr-door"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a5 5 0 015 5v1.5a1.5 1.5 0 01-1.5 1.5H15v2a3 3 0 01-3 3h-1v2h5v2H8a1 1 0 01-1-1v-3.6A6 6 0 0112 3z"/></svg></span><div><b>Head</b><span>Nod yes when Cue asks</span></div></div>
+        <div class="mdr-door"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zm3 2v1h4V4h-4zm2 15a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z"/></svg></span><div><b>Companion app</b><span>Mode switch on screen</span></div></div>
+        <div class="mdr-door"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h8a6 6 0 010 12H8A6 6 0 018 6zm8 3a3 3 0 100 6 3 3 0 000-6z"/></svg></span><div><b>Switch Control</b><span>Or an adaptive controller</span></div></div>
+            </div>
+          </div>
+          <div class="mdr-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h12.2l-4.6-4.6L13 5l7 7-7 7-1.4-1.4 4.6-4.6H4z"/></svg></div>
+          <div>
+            <div class="mdr-lab">One room</div>
+            <div class="mdr-room">
+              <div class="st">Transparency on</div>
+              <div class="sd">Same state, whichever door you came through.</div>
+            </div>
+            <div class="mdr-confirm">
+              <div class="mdr-chip"><i style="background:var(--brand)"></i>Haptic — a pulse you feel</div>
+              <div class="mdr-chip"><i style="background:var(--accent)"></i>Audio — an earcon that opens upward</div>
+              <div class="mdr-chip"><i style="background:var(--teal)"></i>App — live state on screen</div>
+            </div>
+          </div>
+        </div>
+        <p class="mdr-foot">The gesture is the fastest door, never the only one. Every path resolves to one state and confirms in all three channels, so no single ability — and no single sense — is required to operate Cue.</p>
+      </div>
+      <figcaption>Mockup 5 — many doors, one room. Every route to Transparency lands in the same place, and says so three ways.</figcaption>
+    </div>
   </section>
 
   <section class="sec reveal">
