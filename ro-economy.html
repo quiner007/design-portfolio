@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recruit Ops · Points and tier economy · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Recruit Ops · Points and tier economy · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D12}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div style="width: 1200px; height: 1400px; box-sizing: border-box; background: #0B0D12; color: #F5F3EE; font-family: 'IBM Plex Sans', sans-serif; padding: 56px; display: flex; flex-direction: column; gap: 32px">
+
+<div><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 15px; letter-spacing: .14em; color: #FFC145">Recruit Ops · economy</div><h1 style="margin: 4px 0 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -.01em">Three quests a day. Points never reset.</h1><p style="margin: 10px 0 0; font-size: 17px; line-height: 1.5; color: #A3A9B6">A small daily drop gives people a reason to come back. A bank that never resets makes the big rewards worth saving for. Targets to check in testing.</p></div>
+
+<section style="border-radius: 18px; background: #151922; border: 1px solid rgba(245,243,238,0.12); padding: 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: .14em; color: #A3A9B6; margin-bottom: 6px">How you earn</div>
+<sc-for list="{{earn}}" as="e" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 16px; padding: 10px 0; border-top: 1px solid rgba(245,243,238,0.12)"><span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; background: rgba(255,193,69,0.14); border: 1px solid #8C6A1E; color: #FFC145">{{e.g}}</span><span style="flex: 1; font-size: 17px; font-weight: 500">{{e.t}}</span><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 19px; letter-spacing: -.01em; color: #FFC145">+{{e.p}}</span></div>
+</sc-for>
+</section>
+
+<section style="border-radius: 18px; border: 2px solid #FFC145; background: linear-gradient(180deg, rgba(255,193,69,0.14), rgba(255,193,69,0) 70%), #151922; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; letter-spacing: -.01em">
+<span style="font-size: 16px; letter-spacing: .3em; color: #FFC145; width: 100%">A full day, max</span>
+<span style="font-size: 32px">3 quests × 100</span><span style="font-size: 32px; color: #A3A9B6">+</span><span style="font-size: 32px">patrol 50</span><span style="font-size: 32px; color: #A3A9B6">+</span><span style="font-size: 32px">first tap 50</span><span style="font-size: 32px; color: #A3A9B6">=</span><span style="font-size: 48px; color: #FFC145">400 pts</span><span style="width: 100%; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 20px; color: #A3A9B6; padding-top: 8px; border-top: 1px solid rgba(245,243,238,0.12)">Banked: <span style="color: #F5F3EE">visit 1 · 400</span>→<span style="color: #F5F3EE">visit 3 · 1,200</span>→<span style="color: #FFC145">visit 7 · 2,800 = hero mini-mission</span></span>
+</section>
+
+<div style="flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{tiers}}" as="t" hint-placeholder-count="3">
+<section style="border-radius: 18px; background: #151922; border: 1px solid rgba(245,243,238,0.12); border-top: 3px solid {{t.c}}; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; background: {{t.tint}}; border: 1px solid {{t.edge}}; color: {{t.c}}">{{t.g}}</span>
+<div><div style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 29px; line-height: 1; letter-spacing: -.01em">{{t.name}}</div><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: .14em; color: {{t.c}}">{{t.kind}}</div></div>
+<div style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 22px; letter-spacing: -.01em">{{t.cost}}</div>
+<div style="font-size: 15px; line-height: 1.5; color: #A3A9B6">{{t.time}}</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 12px; border-top: 1px solid rgba(245,243,238,0.12)">
+<sc-for list="{{t.items}}" as="i" hint-placeholder-count="3"><span style="font-size: 15px; line-height: 1.4">· {{i}}</span></sc-for>
+</div>
+<div style="margin-top: auto; padding: 12px; border-radius: 12px; background: #11141A; font-size: 14px; line-height: 1.45; color: #F5F3EE">{{t.why}}</div>
+</section>
+</sc-for>
+</div>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      earn: [
+        { g: '★', t: 'Daily quest drop: 3 queue quests, new at park open', p: '100 each' },
+        { g: '◈', t: 'Campus patrol, no queue needed', p: 50 },
+        { g: '✺', t: 'First tap-in of the day (once per visit day)', p: 50 }
+      ],
+      tiers: [
+        { name: 'Field gear', kind: 'Digital', g: '✺', cost: '150 to 300 pts', time: 'Spend on day one. A quick win.', items: ['Profile frames', 'Recruit avatars', 'Attraction badges'], why: 'Costs nothing to give out, so it can be generous.', c: '#4CD7E6', tint: 'rgba(76,215,230,0.14)', edge: '#23707A' },
+        { name: 'Recon', kind: 'Pins', g: '◆', cost: '600 to 1,500 pts', time: 'Two to four visits. Something real to take home.', items: ['Series pins', 'Attraction pins', 'Full campus set'], why: 'Earned, never sold. That is what makes a pin worth trading.', c: '#FFC145', tint: 'rgba(255,193,69,0.14)', edge: '#8C6A1E' },
+        { name: 'Priority', kind: 'In person', g: '★', cost: '2,000 to 2,500 pts', time: 'Five to seven visits of saving. Built for passholders.', items: ['Priority return time · 2,000', 'Hero mini-mission · 2,500'], why: 'Only reachable by saving, so it stays special. Capacity is set with park operations.', c: '#FF5B2E', tint: 'rgba(255,91,46,0.14)', edge: '#8A3218' }
+      ]
+    };
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

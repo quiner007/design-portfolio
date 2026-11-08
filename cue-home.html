@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cue Home · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Cue Home · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a6e;text-decoration:none}a:hover{color:#ff8a99}
+.scr{position:relative;width:402px;height:874px;overflow:hidden;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.scr *{box-sizing:border-box}
+.lt{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.hl{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.43px}
+.sh{font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fn{font-size:13px;line-height:18px;letter-spacing:-.08px}
+.c1{font-size:12px;line-height:16px}
+.c2{font-size:11px;line-height:13px;letter-spacing:.06px}
+.mt{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-size:28px;line-height:34px;font-weight:700}
+.ros{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-size:15px;line-height:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.sec{color:rgba(235,235,245,0.6)}
+.glyph{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:32px;height:28px;border-radius:6px;background:#2c2c2e;flex:none}
+.glyph i{width:8px;height:8px;border-radius:999px;background:#f83c52}
+.glow{position:absolute;left:-30%;right:-30%;top:-340px;height:640px;pointer-events:none;transition:opacity 400ms ease}
+.chip{transition:border-color 200ms ease,transform 160ms cubic-bezier(.2,.8,.2,1)}
+.chip:active{transform:scale(.96)}
+.seg{transition:background-color 250ms ease}
+.earbtn{transition:transform 200ms cubic-bezier(.2,.8,.2,1)}
+.earbtn:active{transform:scale(.97)}
+.breathe{animation:breathe 4s ease-in-out infinite}
+.rip{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:999px;pointer-events:none;opacity:0}
+.ph{position:absolute;top:0;bottom:0;width:2px;border-radius:2px;background:#fff;opacity:0;pointer-events:none}
+@keyframes breathe{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes ripA{0%{transform:scale(.5);opacity:.9}100%{transform:scale(3.5);opacity:0}}
+@keyframes ripB{0%{transform:scale(.5);opacity:.9}100%{transform:scale(3.5);opacity:0}}
+@keyframes holdA{0%{transform:scale(.4);opacity:.5}70%{transform:scale(2.6);opacity:.35}100%{transform:scale(3.2);opacity:0}}
+@keyframes holdB{0%{transform:scale(.4);opacity:.5}70%{transform:scale(2.6);opacity:.35}100%{transform:scale(3.2);opacity:0}}
+@keyframes dotA{0%{transform:scale(1)}40%{transform:scale(1.7)}100%{transform:scale(1)}}
+@keyframes dotB{0%{transform:scale(1)}40%{transform:scale(1.7)}100%{transform:scale(1)}}
+@keyframes growA{0%{transform:scaleY(.15);opacity:.3}100%{transform:scaleY(1);opacity:1}}
+@keyframes growB{0%{transform:scaleY(.15);opacity:.3}100%{transform:scaleY(1);opacity:1}}
+@keyframes sweepA{0%{left:0;opacity:.9}90%{opacity:.9}100%{left:100%;opacity:0}}
+@keyframes sweepB{0%{left:0;opacity:.9}90%{opacity:.9}100%{left:100%;opacity:0}}
+@keyframes modeA{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+@keyframes modeB{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+@keyframes cardA{0%{background-color:#2c2c2e}100%{background-color:#1c1c1e}}
+@keyframes cardB{0%{background-color:#2c2c2e}100%{background-color:#1c1c1e}}
+@keyframes fadeA{0%{opacity:.4}100%{opacity:1}}
+@keyframes fadeB{0%{opacity:.4}100%{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+.rip,.ph{display:none}
+.breathe{animation:none}
+.glow,.chip,.seg,.earbtn{transition:none}
+.mo{animation-name:fadeA !important;animation-duration:200ms !important;animation-timing-function:ease !important}
+}
+.tabs{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center}
+.tabbar{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(44,44,46,0.72);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border:.5px solid rgba(84,84,88,0.65)}
+.tab{min-width:84px;min-height:52px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff}
+.tab:hover{color:#fff}
+.tab[aria-current="page"]{color:#ff5a6e;background:rgba(120,120,128,0.36)}
+.tab svg{width:22px;height:22px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid #ff5a6e;outline-offset:2px}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div class="scr">
+<div class="glow" aria-hidden="true" style="{{glowAnc}}"></div>
+<div class="glow" aria-hidden="true" style="{{glowTr}}"></div>
+<div class="glow" aria-hidden="true" style="{{glowOff}}"></div>
+<main style="position:relative;padding:62px 16px 0;display:flex;flex-direction:column">
+<h1 class="lt">Studio Pro</h1>
+<p class="sh sec" style="margin:2px 0 0">Connected · <span class="ros">82%</span></p>
+
+<section aria-label="Current mode and earcup" style="margin-top:12px;display:flex;flex-direction:column;align-items:center;text-align:center">
+<p class="fn sec" style="margin:0">Current mode</p>
+<p class="mt mo" style="{{modeAnim}}" aria-live="polite">{{modeName}}</p>
+<button class="earbtn" onClick="{{tapEarcup}}" aria-label="Earcup. Tap to try a single tap." style="position:relative;margin-top:8px;border:0;background:transparent;padding:0;cursor:pointer;width:220px;height:220px;border-radius:999px">
+<svg width="220" height="220" viewBox="0 0 220 220" aria-hidden="true" style="display:block">
+<circle class="breathe" cx="110" cy="110" r="106" fill="none" stroke="{{modeColor}}" stroke-opacity="0.3" stroke-width="2"></circle>
+<circle cx="110" cy="110" r="92" fill="#1c1c1e" stroke="rgba(84,84,88,0.65)" stroke-width="1"></circle>
+<circle cx="110" cy="110" r="70" fill="#2c2c2e"></circle>
+<circle cx="110" cy="110" r="48" fill="none" stroke="{{modeColor}}" stroke-opacity="0.5" stroke-width="2"></circle>
+<circle cx="110" cy="110" r="30" fill="#000" stroke="{{modeColor}}" stroke-width="2"></circle>
+<circle cx="110" cy="110" r="6" fill="{{modeColor}}"></circle>
+</svg>
+<sc-for list="{{ripples}}" as="r"><span class="rip" aria-hidden="true" style="{{r.style}}"></span></sc-for>
+</button>
+<p class="fn sec" style="margin:8px 0 0">Tap the earcup, or a gesture below, to feel it.</p>
+</section>
+
+<div role="group" aria-label="Try a gesture" style="margin-top:16px;display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:8px">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="4">
+<button class="chip" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="{{c.style}}">
+<span class="glyph" aria-hidden="true" style="background:transparent"><sc-for list="{{c.dots}}" as="d"><i class="mo" style="{{d.style}}"></i></sc-for></span>
+<span class="c1">{{c.label}}</span>
+</button>
+</sc-for>
+</div>
+
+<section class="mo" aria-live="polite" aria-label="Last cue" style="{{cardStyle}}">
+<span class="glyph" aria-hidden="true"><sc-for list="{{cue.dots}}" as="d"><i class="mo" style="{{d.style}}"></i></sc-for></span>
+<div style="flex:1;min-width:0">
+<div class="hl">{{cue.gesture}} · {{cue.action}}</div>
+<div class="fn sec">{{cue.sig}}</div>
+</div>
+<div aria-hidden="true" style="position:relative;overflow:hidden;display:flex;align-items:center;gap:6px;height:24px;min-width:76px;padding:0 6px;background:linear-gradient(transparent 11.5px, rgba(120,120,128,0.36) 11.5px, rgba(120,120,128,0.36) 12.5px, transparent 12.5px)">
+<sc-for list="{{cue.pulses}}" as="p"><span class="mo" style="{{p.style}}"></span></sc-for>
+<span class="ph" style="{{playhead}}"></span>
+</div>
+</section>
+
+<div role="radiogroup" aria-label="Noise control" style="margin-top:12px;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:4px;padding:4px;background:rgba(120,120,128,0.36);border-radius:999px">
+<sc-for list="{{segs}}" as="s" hint-placeholder-count="3">
+<button class="seg sh" role="radio" aria-checked="{{s.checked}}" onClick="{{s.pick}}" style="{{s.style}}"><span aria-hidden="true" style="{{s.dot}}"></span>{{s.label}}</button>
+</sc-for>
+</div>
+</main>
+
+<nav class="tabs" aria-label="Tabs"><div class="tabbar">
+<a class="tab" href="cue-home.html" aria-current="page"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10 11 3l8 7v9h-5v-6H8v6H3z" fill="currentColor"></path></svg><span class="c2">Home</span></a>
+<a class="tab" href="cue-language.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="5" cy="11" r="2.2" fill="currentColor"></circle><circle cx="11" cy="11" r="2.2" fill="currentColor"></circle><circle cx="17" cy="11" r="3.2" fill="currentColor"></circle></svg><span class="c2">Language</span></a>
+<a class="tab" href="cue-practice.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="1.6" fill="currentColor"></circle></svg><span class="c2">Practice</span></a>
+</div></nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  playSeq(seq, offset) {
+    if (this.props.sound === false) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ac = this.ac || new AC();
+      const ac = this.ac;
+      if (ac.state === 'suspended') ac.resume();
+      const t0 = ac.currentTime + 0.02 + offset / 1000;
+      seq.forEach((p) => {
+        const o = ac.createOscillator();
+        const g = ac.createGain();
+        const s = t0 + p.t / 1000;
+        const e = s + p.d / 1000;
+        o.type = 'sine';
+        o.frequency.setValueAtTime(p.f, s);
+        g.gain.setValueAtTime(0.0001, s);
+        g.gain.exponentialRampToValueAtTime(p.v || 0.18, s + 0.006);
+        g.gain.exponentialRampToValueAtTime(0.0001, e);
+        o.connect(g); g.connect(ac.destination);
+        o.start(s); o.stop(e + 0.03);
+      });
+    } catch (err) {}
+  }
+
+  fire(next) {
+    const st = this.state || {};
+    const n = (st.n || 0) + 1;
+    const patch = Object.assign({ n }, next);
+    if (next.mode && next.mode !== (st.mode || this.props.startMode || 'transparency')) patch.m = (st.m || 0) + 1;
+    this.setState(patch);
+    const mode = next.mode || st.mode || this.props.startMode || 'transparency';
+    const d = this.defs(mode)[next.cue];
+    this.playSeq(d.seq, d.offset);
+  }
+
+  defs(mode) {
+    const red = '#f83c52';
+    const MC = { anc: '#f83c52', transparency: '#ffb340', off: '#8e8e93' };
+    const c = MC[mode];
+    const noise = {
+      anc: { sig: 'Two rising pulses', seq: [{ t: 0, d: 90, f: 440, w: 12, h: 8, bg: c }, { t: 140, d: 120, f: 660, w: 12, h: 18, bg: c }] },
+      transparency: { sig: 'Two falling pulses', seq: [{ t: 0, d: 90, f: 660, w: 12, h: 18, bg: c }, { t: 140, d: 120, f: 440, w: 12, h: 8, bg: c }] },
+      off: { sig: 'One long fade', seq: [{ t: 0, d: 420, f: 500, v: 0.12, w: 48, h: 12, bg: 'linear-gradient(90deg, #8e8e93, rgba(142,142,147,0))' }] }
+    };
+    return {
+      single: { gesture: 'Single tap', action: 'Play / Pause', sig: 'One soft pulse', taps: 1, offset: 160, seq: [{ t: 0, d: 90, f: 520, w: 16, h: 10, bg: red }] },
+      double: { gesture: 'Double tap', action: 'Next', sig: 'One short tick', taps: 2, offset: 300, seq: [{ t: 0, d: 30, f: 1400, w: 4, h: 18, bg: red }] },
+      triple: { gesture: 'Triple tap', action: 'Previous', sig: 'Two short ticks', taps: 3, offset: 440, seq: [{ t: 0, d: 30, f: 1400, w: 4, h: 18, bg: red }, { t: 120, d: 30, f: 1400, w: 4, h: 18, bg: red }] },
+      hold: { gesture: 'Hold', action: { anc: 'Noise cancelling', transparency: 'Transparency', off: 'Off' }[mode], sig: noise[mode].sig, taps: 0, offset: 650, seq: noise[mode].seq }
+    };
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const mode = st.mode || this.props.startMode || 'transparency';
+    const cueId = st.cue || 'double';
+    const n = st.n || 0;
+    const k = n % 2 ? 'A' : 'B';
+    const mk = (st.m || 0) % 2 ? 'A' : 'B';
+    const live = n > 0;
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const MODES = {
+      anc: { name: 'Noise cancelling', short: 'ANC', color: '#f83c52' },
+      transparency: { name: 'Transparency', short: 'Transparency', color: '#ffb340' },
+      off: { name: 'Off', short: 'Off', color: '#8e8e93' }
+    };
+    const order = ['anc', 'transparency', 'off'];
+    const m = MODES[mode];
+    const D = this.defs(mode);
+    const dotsFor = (id, animate) => {
+      const d = D[id];
+      const count = d.taps || 1;
+      const out = [];
+      for (let i = 0; i < count; i++) {
+        let s = d.taps === 0 ? 'width:14px;height:14px;' : '';
+        if (animate) s += d.taps === 0
+          ? 'animation:dot' + k + ' 650ms ' + ease + ' 0ms both;'
+          : 'animation:dot' + k + ' 260ms ' + ease + ' ' + (i * 140) + 'ms both;';
+        out.push({ style: s });
+      }
+      return out;
+    };
+    const cur = D[cueId];
+    const pulses = cur.seq.map((p) => ({
+      style: 'display:block;flex:none;width:' + p.w + 'px;height:' + p.h + 'px;border-radius:999px;background:' + p.bg + ';transform-origin:center;' +
+        (live ? 'animation:grow' + k + ' 220ms ' + ease + ' ' + (cur.offset + p.t) + 'ms both' : '')
+    }));
+    const cue = { gesture: cur.gesture, action: cur.action, sig: cur.sig, dots: dotsFor(cueId, live), pulses };
+    const ripples = [];
+    if (live) {
+      if (cur.taps === 0) {
+        ripples.push({ style: 'background:' + m.color + ';animation:hold' + k + ' 650ms ' + ease + ' 0ms both' });
+      } else {
+        for (let i = 0; i < cur.taps; i++) {
+          ripples.push({ style: 'border:2px solid ' + m.color + ';animation:rip' + k + ' 700ms ' + ease + ' ' + (i * 140) + 'ms both' });
+        }
+      }
+    }
+    const chipBase = 'min-height:64px;border-radius:14px;background:#1c1c1e;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px 2px;border:2px solid ';
+    const mkChip = (id, label, pick) => ({
+      label, pick,
+      dots: dotsFor(id, live && cueId === id),
+      pressed: String(cueId === id),
+      style: chipBase + (cueId === id ? '#ff5a6e' : 'transparent')
+    });
+    const chips = [
+      mkChip('single', 'Single tap', () => this.fire({ cue: 'single' })),
+      mkChip('double', 'Double tap', () => this.fire({ cue: 'double' })),
+      mkChip('triple', 'Triple tap', () => this.fire({ cue: 'triple' })),
+      mkChip('hold', 'Hold', () => this.fire({ cue: 'hold', mode: order[(order.indexOf(mode) + 1) % 3] }))
+    ];
+    const segs = order.map((id) => {
+      const on = id === mode;
+      return {
+        label: MODES[id].short,
+        checked: String(on),
+        pick: () => { if (!on) this.fire({ mode: id, cue: 'hold' }); },
+        style: 'min-height:44px;border:0;border-radius:999px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;padding:0 8px;' + (on ? 'background-color:#d0102f;color:#fff;font-weight:600' : 'background-color:transparent;color:#fff'),
+        dot: 'width:8px;height:8px;border-radius:999px;flex:none;background:' + (on ? '#fff' : MODES[id].color)
+      };
+    });
+    const glow = (id, col) => 'background:radial-gradient(closest-side, ' + col + ', transparent);opacity:' + (mode === id ? 1 : 0);
+    return {
+      modeName: m.name,
+      modeColor: m.color,
+      glowAnc: glow('anc', 'rgba(248,60,82,0.30)'),
+      glowTr: glow('transparency', 'rgba(255,179,64,0.24)'),
+      glowOff: glow('off', 'rgba(142,142,147,0.16)'),
+      modeAnim: 'margin:0;' + ((st.m || 0) > 0 ? 'animation:mode' + mk + ' 400ms ' + ease + ' both' : ''),
+      chips,
+      cue,
+      ripples,
+      cardStyle: 'margin-top:12px;background-color:#1c1c1e;border-radius:22px;padding:14px 16px;display:flex;align-items:center;gap:12px;' + (live ? 'animation:card' + k + ' 500ms ease ' + cur.offset + 'ms both' : ''),
+      playhead: live ? 'animation:sweep' + k + ' ' + Math.max(260, cur.seq[cur.seq.length - 1].t + cur.seq[cur.seq.length - 1].d + 120) + 'ms linear ' + cur.offset + 'ms both' : '',
+      segs,
+      tapEarcup: () => this.fire({ cue: 'single' })
+    };
+  }
+}
+
+dcBoot(Component,{"startMode": "transparency", "sound": true});
+</script>
+</body>
+</html>

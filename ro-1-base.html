@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recruit Ops · Base camp · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Recruit Ops · Base camp · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D12}
+a{color:#FFC145}a:hover{color:#F5F3EE}
+a:focus-visible,button:focus-visible{outline:2px solid #F5F3EE;outline-offset:2px}
+.ch{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.dsp{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div style="width: 390px; height: 844px; background: #0B0D12; color: #F5F3EE; font-family: 'IBM Plex Sans', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="padding: 20px 20px 14px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="lbl" style="color: #A3A9B6">Recruit 0417 · Avengers Campus</span><span class="lbl ch" style="padding: 7px 12px; background: rgba(255,193,69,0.12); color: #FFC145; font-size: 13px">◆ 1,250</span></div>
+<h1 class="dsp" style="margin: 0; font-size: 34px; line-height: 1">Base camp</h1>
+</header>
+<div aria-hidden="true" style="height: 3px; background: repeating-linear-gradient(135deg, #FF5B2E 0 6px, transparent 6px 12px)"></div>
+
+<main style="flex: 1; overflow: hidden; padding: 18px 20px; display: flex; flex-direction: column; gap: 20px">
+<a href="ro-2-tapin.html" class="ch" style="text-decoration: none; background: #FF5B2E; color: #0B0D12; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px">
+<span class="lbl">[ Next step ]</span>
+<span class="dsp" style="font-size: 26px; line-height: 1">Tap in to start</span>
+<span style="font-size: 14px; line-height: 1.45">Tap your MagicBand or phone at any attraction entrance. Missions unlock while you wait.</span>
+<span class="lbl" style="margin-top: 4px; display: flex; justify-content: space-between; align-items: center; min-height: 28px; border-top: 1px solid rgba(11,13,18,0.25); padding-top: 10px">How tap-in works<span aria-hidden="true">→</span></span>
+</a>
+
+<section style="display: flex; flex-direction: column; gap: 8px">
+<span class="lbl" style="color: #A3A9B6">On campus now</span>
+<sc-for list="{{rides}}" as="r" hint-placeholder-count="3">
+<div class="ch" style="display: flex; align-items: center; gap: 14px; padding: 14px; background: #151922">
+<span class="lbl" style="color: #A3A9B6; font-size: 13px">{{r.n}}</span>
+<span style="flex: 1; min-width: 0"><span style="display: block; font-weight: 600; font-size: 15px">{{r.t}}</span><span style="display: block; font-size: 13px; color: #A3A9B6">{{r.d}}</span></span>
+<span class="lbl" style="padding: 5px 8px; border: 1px solid {{r.c}}; color: {{r.c}}">{{r.s}}</span>
+</div>
+</sc-for>
+</section>
+
+<section class="ch" style="background: #151922; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span class="lbl" style="color: #FFC145">Saving for · Hero mini-mission</span><span class="lbl" style="font-size: 13px">1,250 / 2,500</span></div>
+<div aria-label="50 percent" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px"><sc-for list="{{meter}}" as="m" hint-placeholder-count="10"><span style="height: 10px; background: {{m}}"></span></sc-for></div>
+<div style="display: flex; gap: 8px">
+<div style="flex: 1; padding: 10px 12px; background: #0B0D12"><div class="dsp" style="font-size: 26px; line-height: 1; color: #4CD7E6">3</div><div style="font-size: 12px; color: #A3A9B6">New quests today</div></div>
+<div style="flex: 1; padding: 10px 12px; background: #0B0D12"><div class="dsp" style="font-size: 26px; line-height: 1; color: #FF5B2E">04</div><div style="font-size: 12px; color: #A3A9B6">Visits banked</div></div>
+</div>
+</section>
+</main>
+
+<nav aria-label="Recruit Ops" style="height: 76px; flex: none; background: #11141A; border-top: 1px solid rgba(245,243,238,0.10); display: flex">
+<a href="ro-1-base.html" aria-current="page" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #FF5B2E; border-top: 2px solid #FF5B2E"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 21 7v10l-9 5-9-5V7z"/></svg><span class="lbl">Base</span></a>
+<a href="ro-2-tapin.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #A3A9B6"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 8a6 6 0 0 1 0 8M12 5a10 10 0 0 1 0 14M4 11a2 2 0 0 1 0 2"/></svg><span class="lbl">Tap in</span></a>
+<a href="ro-3-mission.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #A3A9B6"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><span class="lbl">Missions</span></a>
+<a href="ro-5-rewards.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #A3A9B6"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 20 12 12 21 4 12z"/></svg><span class="lbl">Rewards</span></a>
+</nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  renderVals() {
+    const meter = [];
+    for (let i = 0; i < 10; i++) meter.push(i < 5 ? '#FFC145' : '#1E2330');
+    return {
+      meter,
+      rides: [
+        { n: '01', t: 'Mission: Breakout', d: 'Today\u2019s drop · 3 quests', s: 'Tap to unlock', c: '#A3A9B6' },
+        { n: '02', t: 'WEB SLINGERS', d: 'Next drop · tomorrow', s: 'Tomorrow', c: '#A3A9B6' },
+        { n: '03', t: 'Campus patrol', d: 'Spot-it around the land', s: 'Open', c: '#4CD7E6' }
+      ]
+    };
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

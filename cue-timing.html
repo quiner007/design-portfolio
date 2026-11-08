@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cue Timing · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Cue Timing · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a6e;text-decoration:none}a:hover{color:#ff8a99}
+.scr{position:relative;width:402px;height:874px;overflow:hidden;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.scr *{box-sizing:border-box}
+.lt{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.hl{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.43px}
+.bd{font-size:17px;line-height:22px;letter-spacing:-.43px}
+.co{font-size:16px;line-height:21px;letter-spacing:-.31px}
+.sh{font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fn{font-size:13px;line-height:18px;letter-spacing:-.08px}
+.c2{font-size:11px;line-height:13px;letter-spacing:.06px}
+.ros{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-size:15px;line-height:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.sec{color:rgba(235,235,245,0.6)}
+.card{background:#1c1c1e;border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.plot{position:relative;height:64px;background:linear-gradient(transparent 31.5px, rgba(120,120,128,0.36) 31.5px, rgba(120,120,128,0.36) 32.5px, transparent 32.5px)}
+.tabs{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center}
+.tabbar{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(44,44,46,0.72);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border:.5px solid rgba(84,84,88,0.65)}
+.tab{min-width:84px;min-height:52px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff}
+.tab:hover{color:#fff}
+.tab[aria-current="page"]{color:#ff5a6e;background:rgba(120,120,128,0.36)}
+.tab svg{width:22px;height:22px}
+button{font:inherit;color:inherit}
+.seg{transition:background-color 250ms ease}
+.trybtn{transition:transform 160ms cubic-bezier(.2,.8,.2,1)}
+.trybtn:active{transform:scale(.97)}
+@keyframes tapA{0%{transform:scale(.3);opacity:0}50%{transform:scale(1.8);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tapB{0%{transform:scale(.3);opacity:0}50%{transform:scale(1.8);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes fillA{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes fillB{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes fadeA{0%{opacity:.4}100%{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+.seg,.trybtn{transition:none}
+.mo{animation-name:fadeA !important;animation-duration:200ms !important;animation-delay:0ms !important;animation-timing-function:ease !important;transition:none !important}
+}
+:focus-visible{outline:2px solid #ff5a6e;outline-offset:2px}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div class="scr">
+<main style="padding:62px 16px 0;display:flex;flex-direction:column">
+<a href="cue-language.html" class="co" style="display:inline-flex;align-items:center;gap:4px;min-height:44px;margin-left:-6px;align-self:flex-start"><svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2 2 10l8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Language</a>
+<h1 class="lt">Timing</h1>
+<p class="sh sec" style="margin:2px 0 0">Give yourself more time between taps, or less. Cue waits for you.</p>
+
+<div role="radiogroup" aria-label="Timing preset" style="margin-top:20px;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:4px;padding:4px;background:rgba(120,120,128,0.36);border-radius:999px">
+<sc-for list="{{presets}}" as="p" hint-placeholder-count="3">
+<button role="radio" aria-checked="{{p.checked}}" onClick="{{p.pick}}" class="seg sh" style="{{p.style}}">{{p.label}}</button>
+</sc-for>
+</div>
+
+<section class="card" style="margin-top:24px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="bd">Tap window</span><span class="ros sec" aria-live="polite">{{tapMs}} ms</span></div>
+<div class="plot" role="slider" aria-label="Tap window" aria-valuemin="250" aria-valuemax="1000" aria-valuenow="{{tapMs}}" aria-valuetext="{{tapMs}} milliseconds" tabindex="0">
+<span class="mo" aria-hidden="true" style="{{tapZone}}"></span>
+<sc-for list="{{tapDots}}" as="d"><span class="mo" aria-hidden="true" style="{{d.style}}"></span></sc-for>
+<span class="mo" aria-hidden="true" style="{{tapThumb}}"></span>
+</div>
+<div class="c2 sec" style="display:flex;justify-content:space-between" aria-hidden="true"><span>0</span><span>500</span><span>1000 ms</span></div>
+<p class="fn sec" style="margin:0">Every tap in a triple tap has to land inside this window.</p>
+</section>
+
+<section class="card" style="margin-top:16px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="bd">Hold length</span><span class="ros sec" aria-live="polite">{{holdMs}} ms</span></div>
+<div class="plot" role="slider" aria-label="Hold length" aria-valuemin="300" aria-valuemax="1000" aria-valuenow="{{holdMs}}" aria-valuetext="{{holdMs}} milliseconds" tabindex="0">
+<span aria-hidden="true" style="position:absolute;left:0;top:25px;width:14px;height:14px;border-radius:999px;background:#f83c52"></span>
+<span class="mo" aria-hidden="true" style="{{holdBar}}"></span>
+<span class="mo" aria-hidden="true" style="{{holdThumb}}"></span>
+</div>
+<div class="c2 sec" style="display:flex;justify-content:space-between" aria-hidden="true"><span>0</span><span>500</span><span>1000 ms</span></div>
+<p class="fn sec" style="margin:0">Press longer than this to change noise mode.</p>
+</section>
+
+<button class="trybtn hl" onClick="{{tryIt}}" style="margin-top:16px;min-height:50px;border:0;border-radius:999px;background:rgba(120,120,128,0.36);color:#ff5a6e;cursor:pointer">Try it on the earcup</button>
+</main>
+
+<nav class="tabs" aria-label="Tabs"><div class="tabbar">
+<a class="tab" href="cue-home.html"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10 11 3l8 7v9h-5v-6H8v6H3z" fill="currentColor"></path></svg><span class="c2">Home</span></a>
+<a class="tab" href="cue-language.html" aria-current="page"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="5" cy="11" r="2.2" fill="currentColor"></circle><circle cx="11" cy="11" r="2.2" fill="currentColor"></circle><circle cx="17" cy="11" r="3.2" fill="currentColor"></circle></svg><span class="c2">Language</span></a>
+<a class="tab" href="cue-practice.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="1.6" fill="currentColor"></circle></svg><span class="c2">Practice</span></a>
+</div></nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const id = st.preset || 'standard';
+    const n = st.n || 0;
+    const k = n % 2 ? 'A' : 'B';
+    const live = n > 0;
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const glide = 'transition:left 400ms ' + ease + ',width 400ms ' + ease + ';';
+    const P = {
+      quick: { label: 'Quick', tap: 300, hold: 450 },
+      standard: { label: 'Standard', tap: 450, hold: 600 },
+      relaxed: { label: 'Relaxed', tap: 750, hold: 900 }
+    };
+    const cur = P[id];
+    const W = 338;
+    const x = (ms) => Math.round(ms * W / 1000);
+    const thumb = (ms) => glide + 'position:absolute;top:18px;left:' + (x(ms) - 14) + 'px;width:28px;height:28px;border-radius:999px;background:#fff';
+    const presets = ['quick', 'standard', 'relaxed'].map((key) => ({
+      label: P[key].label,
+      checked: String(key === id),
+      pick: () => this.setState({ preset: key, n: n + 1 }),
+      style: 'min-height:44px;border:0;border-radius:999px;cursor:pointer;' + (key === id ? 'background-color:#d0102f;color:#fff;font-weight:600' : 'background-color:transparent;color:#fff')
+    }));
+    // The three taps play back in real time, spread across the window, then the hold bar fills at real hold speed.
+    const tapDots = [0, 0.42, 0.84].map((f) => ({
+      style: glide + 'position:absolute;top:28px;left:' + (x(cur.tap * f) + 2) + 'px;width:8px;height:8px;border-radius:999px;background:#f83c52' +
+        (live ? ';animation:tap' + k + ' 260ms ' + ease + ' ' + Math.round(cur.tap * f) + 'ms both' : '')
+    }));
+    return {
+      presets,
+      tapMs: cur.tap,
+      holdMs: cur.hold,
+      tapZone: glide + 'position:absolute;left:0;top:10px;height:44px;width:' + x(cur.tap) + 'px;border-radius:12px;background:rgba(248,60,82,0.16)',
+      tapDots,
+      tapThumb: thumb(cur.tap),
+      holdBar: glide + 'position:absolute;left:7px;top:29px;height:6px;border-radius:999px;transform-origin:left center;background:linear-gradient(90deg, #f83c52, #ff6b57);width:' + (x(cur.hold) - 7) + 'px' +
+        (live ? ';animation:fill' + k + ' ' + cur.hold + 'ms linear ' + (cur.tap + 300) + 'ms both' : ''),
+      holdThumb: thumb(cur.hold),
+      tryIt: () => this.setState({ n: n + 1 })
+    };
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

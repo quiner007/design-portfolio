@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cue Practice · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Cue Practice · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a6e;text-decoration:none}a:hover{color:#ff8a99}
+.scr{position:relative;width:402px;height:874px;overflow:hidden;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.scr *{box-sizing:border-box}
+.lt{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.hl{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.43px}
+.co{font-size:16px;line-height:21px;letter-spacing:-.31px}
+.sh{font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fn{font-size:13px;line-height:18px;letter-spacing:-.08px}
+.c1{font-size:12px;line-height:16px}
+.c2{font-size:11px;line-height:13px;letter-spacing:.06px}
+.ros{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-size:15px;line-height:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.sec{color:rgba(235,235,245,0.6)}
+.glyph{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:28px;flex:none}
+.glyph i{width:8px;height:8px;border-radius:999px;background:#f83c52}
+.tabs{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center}
+.tabbar{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(44,44,46,0.72);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border:.5px solid rgba(84,84,88,0.65)}
+.tab{min-width:84px;min-height:52px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff}
+.tab:hover{color:#fff}
+.tab[aria-current="page"]{color:#ff5a6e;background:rgba(120,120,128,0.36)}
+.tab svg{width:22px;height:22px}
+button{font:inherit;color:inherit}
+.tile{transition:border-color 260ms ease,transform 160ms cubic-bezier(.2,.8,.2,1)}
+.tile:active{transform:scale(.97)}
+.feel{transition:transform 160ms cubic-bezier(.2,.8,.2,1)}
+.feel:active{transform:scale(.98)}
+.bar{transition:width 400ms cubic-bezier(.2,.8,.2,1)}
+.idle{animation:breathe 3.2s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+.mark{animation:rise 300ms cubic-bezier(.2,.8,.2,1) both}
+.result{animation:rise 360ms cubic-bezier(.2,.8,.2,1) 120ms both}
+.sonar{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:999px;border:2px solid #f83c52;opacity:0;pointer-events:none}
+@keyframes breathe{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes rise{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+@keyframes sonarA{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.2);opacity:0}}
+@keyframes sonarB{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.2);opacity:0}}
+@keyframes coreA{0%{transform:scale(1)}30%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes coreB{0%{transform:scale(1)}30%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes fadeA{0%{opacity:.4}100%{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+.sonar{display:none}
+.idle{animation:none}
+.tile,.feel,.bar{transition:none}
+.mark,.result,.mo{animation:fadeA 200ms ease both !important}
+}
+:focus-visible{outline:2px solid #ff5a6e;outline-offset:2px}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div class="scr">
+<main style="padding:62px 16px 0;display:flex;flex-direction:column">
+<h1 class="lt">Practice</h1>
+<p class="sh sec" style="margin:2px 0 0">Feel a cue, then name it. Keep your eyes off the screen.</p>
+
+<div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="ros">Cue {{round}} of 10</span><span class="fn sec">{{score}} right so far</span></div>
+<span role="img" aria-label="{{round}} of 10" style="display:block;height:6px;border-radius:999px;background:rgba(120,120,128,0.36);overflow:hidden"><span class="bar" style="{{barStyle}}"></span></span>
+</div>
+
+<button class="feel" onClick="{{feel}}" aria-label="Feel the cue again" style="margin-top:16px;border:0;cursor:pointer;background:#1c1c1e;border-radius:22px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:12px">
+<span style="position:relative;display:block;width:132px;height:132px">
+<svg width="132" height="132" viewBox="0 0 132 132" aria-hidden="true" style="display:block">
+<circle class="idle" cx="66" cy="66" r="64" fill="none" stroke="#f83c52" stroke-opacity="0.2" stroke-width="2"></circle>
+<circle cx="66" cy="66" r="48" fill="none" stroke="#f83c52" stroke-opacity="0.35" stroke-width="2"></circle>
+</svg>
+<span class="mo" aria-hidden="true" style="{{coreStyle}}"><svg width="18" height="24" viewBox="0 0 18 24"><path d="M2 2v20l15-10z" fill="#fff"></path></svg></span>
+<sc-for list="{{sonar}}" as="s"><span class="sonar" aria-hidden="true" style="{{s.style}}"></span></sc-for>
+</span>
+<span class="hl">Feel it again</span>
+</button>
+
+<p class="fn sec" style="margin:24px 0 0;padding:0 16px 8px" id="q">What did you feel?</p>
+<div role="group" aria-labelledby="q" style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:8px">
+<sc-for list="{{tiles}}" as="t" hint-placeholder-count="4">
+<button class="tile" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="{{t.style}}">
+<span class="glyph" aria-hidden="true"><sc-for list="{{t.dots}}" as="d"><i style="{{d.style}}"></i></sc-for></span>
+<span style="display:flex;flex-direction:column;text-align:left"><span class="hl">{{t.action}}</span><span class="c1 sec">{{t.gesture}}</span></span>
+<sc-if value="{{t.showMark}}" hint-placeholder-val="{{ false }}"><span class="c1 mark" style="{{t.markStyle}}">{{t.mark}}</span></sc-if>
+</button>
+</sc-for>
+</div>
+
+<sc-if value="{{answered}}" hint-placeholder-val="{{ false }}">
+<section class="result" aria-live="polite" style="margin-top:12px;display:flex;align-items:center;gap:12px">
+<p class="sh" style="margin:0;flex:1">{{result}}</p>
+<button onClick="{{next}}" class="hl" style="min-height:44px;border:0;border-radius:999px;background:#d0102f;color:#fff;padding:0 20px;cursor:pointer">Next cue</button>
+</section>
+</sc-if>
+</main>
+
+<nav class="tabs" aria-label="Tabs"><div class="tabbar">
+<a class="tab" href="cue-home.html"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10 11 3l8 7v9h-5v-6H8v6H3z" fill="currentColor"></path></svg><span class="c2">Home</span></a>
+<a class="tab" href="cue-language.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="5" cy="11" r="2.2" fill="currentColor"></circle><circle cx="11" cy="11" r="2.2" fill="currentColor"></circle><circle cx="17" cy="11" r="3.2" fill="currentColor"></circle></svg><span class="c2">Language</span></a>
+<a class="tab" href="cue-practice.html" aria-current="page"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="1.6" fill="currentColor"></circle></svg><span class="c2">Practice</span></a>
+</div></nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  // The mystery cue for this round is Next: one short tick.
+  playCue() {
+    if (this.props.sound === false) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ac = this.ac || new AC();
+      const ac = this.ac;
+      if (ac.state === 'suspended') ac.resume();
+      const s = ac.currentTime + 0.05;
+      const o = ac.createOscillator();
+      const g = ac.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(1400, s);
+      g.gain.setValueAtTime(0.0001, s);
+      g.gain.exponentialRampToValueAtTime(0.2, s + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, s + 0.03);
+      o.connect(g); g.connect(ac.destination);
+      o.start(s); o.stop(s + 0.06);
+    } catch (err) {}
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const n = st.n || 0;
+    const k = n % 2 ? 'A' : 'B';
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const sonar = n > 0 ? [0, 160].map((d) => ({ style: 'animation:sonar' + k + ' 900ms ' + ease + ' ' + d + 'ms both' })) : [];
+    const coreStyle = 'position:absolute;left:34px;top:34px;width:64px;height:64px;border-radius:999px;background:#d0102f;display:flex;align-items:center;justify-content:center;padding-left:4px' +
+      (n > 0 ? ';animation:core' + k + ' 320ms ' + ease + ' both' : '');
+    const picked = st.picked || null;
+    const round = st.round || 4;
+    const score = st.score == null ? 3 : st.score;
+    const answer = 'next';
+    const dot = { style: '' };
+    const OPTS = [
+      { id: 'play', action: 'Play / Pause', gesture: 'Single tap', dots: [dot] },
+      { id: 'next', action: 'Next', gesture: 'Double tap', dots: [dot, dot] },
+      { id: 'prev', action: 'Previous', gesture: 'Triple tap', dots: [dot, dot, dot] },
+      { id: 'noise', action: 'Noise modes', gesture: 'Hold', dots: [{ style: 'width:14px;height:14px' }] }
+    ];
+    const tiles = OPTS.map((o) => {
+      const isAnswer = !!picked && o.id === answer;
+      const isWrong = picked === o.id && o.id !== answer;
+      const border = isAnswer ? '#30d158' : isWrong ? '#ff5a6e' : 'transparent';
+      return {
+        action: o.action,
+        gesture: o.gesture,
+        dots: o.dots,
+        pressed: String(picked === o.id),
+        pick: picked ? null : () => this.setState({ picked: o.id, score: o.id === answer ? score + 1 : score }),
+        showMark: isAnswer || isWrong,
+        mark: isAnswer ? 'Answer' : 'Your pick',
+        markStyle: 'align-self:flex-start;font-weight:600;color:' + (isAnswer ? '#30d158' : '#ff5a6e'),
+        style: 'min-height:96px;border-radius:14px;background:#1c1c1e;padding:12px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:4px;text-align:left;cursor:pointer;border:2px solid ' + border
+      };
+    });
+    const right = picked === answer;
+    return {
+      round,
+      score,
+      barStyle: 'display:block;height:100%;border-radius:999px;background:linear-gradient(90deg, #f83c52, #ff6b57);width:' + (round * 10) + '%',
+      tiles,
+      answered: !!picked,
+      result: right ? 'Right. Next is one short tick.' : 'Not quite. That was Next: one short tick.',
+      next: () => { this.setState({ picked: null, round: Math.min(10, round + 1), n: n + 1 }); this.playCue(); },
+      feel: () => { this.setState({ n: n + 1 }); this.playCue(); },
+      sonar,
+      coreStyle
+    };
+  }
+}
+
+dcBoot(Component,{"sound": true});
+</script>
+</body>
+</html>

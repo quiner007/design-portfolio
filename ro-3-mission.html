@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recruit Ops · Queue mission · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Recruit Ops · Queue mission · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D12}
+a{color:#FFC145}a:hover{color:#F5F3EE}
+a:focus-visible,button:focus-visible{outline:2px solid #F5F3EE;outline-offset:2px}
+.ch{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.dsp{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div style="width: 390px; height: 844px; background: #0B0D12; color: #F5F3EE; font-family: 'IBM Plex Sans', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="padding: 20px 20px 14px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="lbl" style="color: #FF5B2E">Mission 01 / 03 · Queue</span><span class="lbl" style="color: #FFC145; font-size: 13px">+100</span></div>
+<h1 class="dsp" style="margin: 0; font-size: 30px; line-height: 1">Spot the artifact</h1>
+<div aria-label="Mission 1 of 3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px"><span style="height: 4px; background: #FF5B2E"></span><span style="height: 4px; background: #1E2330"></span><span style="height: 4px; background: #1E2330"></span></div>
+</header>
+
+<main style="flex: 1; overflow: hidden; padding: 8px 20px 18px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 15px; line-height: 1.5">Look at the display case on your left. Which item matches this outline?</p>
+<div style="position: relative; height: 190px; background: #151922; display: flex; align-items: center; justify-content: center">
+<span aria-hidden="true" style="position: absolute; left: 10px; top: 10px; width: 22px; height: 22px; border-left: 2px solid #FFC145; border-top: 2px solid #FFC145"></span>
+<span aria-hidden="true" style="position: absolute; right: 10px; top: 10px; width: 22px; height: 22px; border-right: 2px solid #FFC145; border-top: 2px solid #FFC145"></span>
+<span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; width: 22px; height: 22px; border-left: 2px solid #FFC145; border-bottom: 2px solid #FFC145"></span>
+<span aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; width: 22px; height: 22px; border-right: 2px solid #FFC145; border-bottom: 2px solid #FFC145"></span>
+<svg role="img" aria-label="Outline of a tall six-sided canister with a domed lid" width="110" height="130" viewBox="0 0 120 140"><path d="M30 40 Q60 8 90 40 Z M24 40 H96 L104 60 V118 L96 132 H24 L16 118 V60 Z" fill="none" stroke="#FFC145" stroke-width="3" stroke-dasharray="7 6" stroke-linejoin="round"/></svg>
+<span class="lbl" style="position: absolute; right: 40px; top: 14px; color: #A3A9B6">0:42</span>
+</div>
+<div role="radiogroup" aria-label="Answers" style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{answers}}" as="a" hint-placeholder-count="3">
+<button role="radio" aria-checked="{{a.on}}" onClick="{{a.pick}}" class="ch" style="all: unset; cursor: pointer; display: flex; align-items: center; gap: 14px; min-height: 54px; padding: 0 16px; background: {{a.bg}}; color: {{a.fg}}">
+<span class="lbl" style="font-size: 14px">{{a.k}}</span>
+<span style="flex: 1; font-weight: 600; font-size: 15px">{{a.t}}</span>
+</button>
+</sc-for>
+</div>
+<button style="all: unset; cursor: pointer; font-size: 13px; color: #4CD7E6; text-decoration: underline; text-underline-offset: 3px; align-self: flex-start; min-height: 40px; display: flex; align-items: center">Can't see the case? Play the audio version</button>
+<a href="ro-4-debrief.html" class="ch" style="margin-top: auto; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; background: #F5F3EE; color: #0B0D12; text-decoration: none"><span class="dsp" style="font-size: 16px">{{lockLabel}}</span><span aria-hidden="true">→</span></a>
+</main>
+
+<nav aria-label="Recruit Ops" style="height: 76px; flex: none; background: #11141A; border-top: 1px solid rgba(245,243,238,0.10); display: flex">
+<a href="ro-1-base.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #A3A9B6"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 21 7v10l-9 5-9-5V7z"/></svg><span class="lbl">Base</span></a>
+<a href="ro-2-tapin.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #A3A9B6"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 8a6 6 0 0 1 0 8M12 5a10 10 0 0 1 0 14M4 11a2 2 0 0 1 0 2"/></svg><span class="lbl">Tap in</span></a>
+<a href="ro-3-mission.html" aria-current="page" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #FF5B2E; border-top: 2px solid #FF5B2E"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><span class="lbl">Missions</span></a>
+<a href="ro-5-rewards.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-decoration: none; color: #A3A9B6"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 20 12 12 21 4 12z"/></svg><span class="lbl">Rewards</span></a>
+</nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { picked: 'b' }; }
+  renderVals() {
+    const opts = [
+      { id: 'a', k: 'A', t: 'The striped egg' },
+      { id: 'b', k: 'B', t: 'The sealed canister' },
+      { id: 'c', k: 'C', t: 'The golden idol' }
+    ];
+    const picked = this.state.picked;
+    return {
+      answers: opts.map((o) => {
+        const on = o.id === picked;
+        return Object.assign({}, o, {
+          on: on ? 'true' : 'false',
+          bg: on ? '#FF5B2E' : '#151922',
+          fg: on ? '#0B0D12' : '#F5F3EE',
+          pick: () => this.setState({ picked: o.id })
+        });
+      }),
+      lockLabel: picked ? 'Lock answer' : 'Pick an answer'
+    };
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

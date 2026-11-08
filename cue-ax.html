@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cue Larger Text · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Cue Larger Text · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a6e;text-decoration:none}a:hover{color:#ff8a99}
+.scr{position:relative;width:402px;height:874px;overflow:hidden;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.scr *{box-sizing:border-box}
+main>*{flex-shrink:0}
+.lt{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.bd{font-size:17px;line-height:22px;letter-spacing:-.43px}
+.sh{font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fn{font-size:13px;line-height:18px;letter-spacing:-.08px}
+.c2{font-size:11px;line-height:13px;letter-spacing:.06px}
+.sec{color:rgba(235,235,245,0.6)}
+.glyph{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:32px;height:28px;border-radius:6px;background:#2c2c2e;flex:none}
+.glyph i{width:8px;height:8px;border-radius:999px;background:#f83c52}
+.glyph i.hold{width:14px;height:14px}
+.list{background:#1c1c1e;border-radius:22px;overflow:hidden}
+.row{display:flex;align-items:center;gap:12px;min-height:44px;padding:9px 16px;position:relative;color:#fff}
+.row:hover{color:#fff;background:#2c2c2e}
+.row + .row::before{content:"";position:absolute;top:0;right:0;left:60px;border-top:.5px solid rgba(84,84,88,0.65)}
+.row.plain + .row.plain::before{left:16px}
+.nota{flex:none;width:56px;height:20px;color:#f83c52}
+.chev{width:8px;height:13px;color:rgba(235,235,245,0.3);flex:none}
+.hdr{margin:0;padding:0 16px 8px}
+.val{color:rgba(235,235,245,0.6)}
+.tabs{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center}
+.tabbar{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(44,44,46,0.72);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border:.5px solid rgba(84,84,88,0.65)}
+.tab{min-width:84px;min-height:52px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff}
+.tab:hover{color:#fff}
+.tab[aria-current="page"]{color:#ff5a6e;background:rgba(120,120,128,0.36)}
+.tab svg{width:22px;height:22px}
+:focus-visible{outline:2px solid #ff5a6e;outline-offset:2px}
+.list,.hdr{animation:enter 520ms cubic-bezier(.2,.8,.2,1) both}
+.hdr:nth-of-type(2){animation-delay:40ms}.list:nth-of-type(1){animation-delay:80ms}
+main > .hdr:nth-of-type(3){animation-delay:140ms}main > .list:nth-of-type(2){animation-delay:180ms}
+main > .hdr:nth-of-type(4){animation-delay:240ms}main > .list:nth-of-type(3){animation-delay:280ms}
+.row{transition:background-color 160ms ease}
+.row .glyph i{transition:transform 200ms cubic-bezier(.2,.8,.2,1)}
+.nota rect{transform-box:fill-box;transform-origin:center}
+.row:hover .nota rect,.row:focus-visible .nota rect{animation:hit 320ms cubic-bezier(.2,.8,.2,1) both}
+.row:hover .nota rect:nth-of-type(2),.row:focus-visible .nota rect:nth-of-type(2){animation-delay:140ms}
+.row:hover .glyph i,.row:focus-visible .glyph i{animation:dot 260ms cubic-bezier(.2,.8,.2,1) both}
+.row:hover .glyph i:nth-child(2),.row:focus-visible .glyph i:nth-child(2){animation-delay:140ms}
+.row:hover .glyph i:nth-child(3),.row:focus-visible .glyph i:nth-child(3){animation-delay:280ms}
+.row:active{background-color:#3a3a3c}
+@keyframes enter{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:none}}
+@keyframes hit{0%{transform:scaleY(.2);opacity:.4}100%{transform:scaleY(1);opacity:1}}
+@keyframes dot{0%{transform:scale(1)}40%{transform:scale(1.7)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){
+.list,.hdr{animation:fadein 200ms ease both}
+.row:hover .nota rect,.row:focus-visible .nota rect,.row:hover .glyph i,.row:focus-visible .glyph i{animation:fadein 200ms ease both}
+}
+@keyframes fadein{0%{opacity:.4}100%{opacity:1}}
+.card{background:#1c1c1e;border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.t3{margin:0;font-size:20px;line-height:25px;font-weight:600;letter-spacing:-.45px}
+.co{font-size:16px;line-height:21px;letter-spacing:-.31px}
+.pill{min-height:50px;border:0;border-radius:999px;display:flex;align-items:center;justify-content:center;font:inherit;font-size:17px;font-weight:600;color:#fff;background:#d0102f;cursor:pointer}
+.pill.sec2{background:rgba(120,120,128,0.24);color:#ff5a6e}
+.ax .bd{font-size:28px;line-height:34px}.ax .fn{font-size:23px;line-height:29px}.ax .lt{font-size:40px;line-height:48px}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div class="scr ax">
+<main style="padding:62px 16px 0;display:flex;flex-direction:column">
+<h1 class="lt">Language</h1>
+<p class="fn sec hdr" style="margin-top:16px;padding-left:4px">Playback</p>
+<div class="list">
+<a class="row" href="cue-signature.html" style="flex-wrap:wrap;align-items:flex-start;padding:14px 16px"><span class="glyph" aria-hidden="true" style="margin-top:4px"><i></i></span><span style="flex:1;min-width:0"><span class="bd" style="display:block">Single tap</span><span class="fn sec" style="display:block">Play or pause. One soft pulse.</span></span></a>
+<a class="row" href="cue-signature.html" style="flex-wrap:wrap;align-items:flex-start;padding:14px 16px"><span class="glyph" aria-hidden="true" style="margin-top:4px"><i></i><i></i></span><span style="flex:1;min-width:0"><span class="bd" style="display:block">Double tap</span><span class="fn sec" style="display:block">Next. One short tick.</span></span></a>
+<a class="row" href="cue-signature.html" style="flex-wrap:wrap;align-items:flex-start;padding:14px 16px"><span class="glyph" aria-hidden="true" style="margin-top:4px"><i></i><i></i><i></i></span><span style="flex:1;min-width:0"><span class="bd" style="display:block">Triple tap</span><span class="fn sec" style="display:block">Previous. Two short ticks.</span></span></a>
+</div>
+<p class="fn sec hdr" style="margin-top:20px;padding-left:4px">Noise</p>
+<div class="list"><a class="row" href="cue-signature.html" style="flex-wrap:wrap;align-items:flex-start;padding:14px 16px"><span class="glyph" aria-hidden="true" style="margin-top:4px"><i style="width:14px;height:14px"></i></span><span style="flex:1;min-width:0"><span class="bd" style="display:block">Hold</span><span class="fn sec" style="display:block">Move through noise modes.</span></span></a></div>
+</main>
+<div style="position:absolute;left:12px;top:12px;padding:4px 10px;border-radius:999px;background:#ffb340;color:#000;font-size:12px;font-weight:700">AX5 · Larger Text</div>
+<nav class="tabs" aria-label="Tabs"><div class="tabbar">
+<a class="tab" href="cue-home.html"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10 11 3l8 7v9h-5v-6H8v6H3z" fill="currentColor"></path></svg><span class="c2">Home</span></a>
+<a class="tab" href="cue-language.html" aria-current="page"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="5" cy="11" r="2.2" fill="currentColor"></circle><circle cx="11" cy="11" r="2.2" fill="currentColor"></circle><circle cx="17" cy="11" r="3.2" fill="currentColor"></circle></svg><span class="c2">Language</span></a>
+<a class="tab" href="cue-practice.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="1.6" fill="currentColor"></circle></svg><span class="c2">Practice</span></a>
+</div></nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

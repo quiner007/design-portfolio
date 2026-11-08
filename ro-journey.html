@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recruit Ops · Guest journey map · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Recruit Ops · Guest journey map · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D12}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div style="width: 2740px; height: 1400px; box-sizing: border-box; background: #0B0D12; color: #F5F3EE; font-family: 'IBM Plex Sans', sans-serif; padding: 56px 64px; display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px">
+<div><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 15px; letter-spacing: .14em; color: #FF5B2E">Recruit Ops · guest journey</div><h1 style="margin: 4px 0 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-weight: 400; font-size: 52px; line-height: 1; letter-spacing: -.01em">One afternoon at Avengers Campus</h1></div>
+<div style="display: flex; gap: 24px; font-size: 16px; color: #A3A9B6"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 4px; background: #A3A9B6"></span>Today</span><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 4px; background: #FF5B2E"></span>With Recruit Ops</span><span>Persona: [Annual passholder, 20s, visits monthly]</span></div>
+</div>
+
+<div style="flex: 1; display: grid; grid-template-columns: 200px repeat(8, minmax(0, 1fr)); grid-template-rows: auto 190px auto auto auto auto auto; gap: 10px">
+
+<div></div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8">
+<div style="border-radius: 14px; padding: 16px; background: {{s.head}}; color: #0B0D12; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: .14em">{{s.n}}</span><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 22px; line-height: 1; letter-spacing: -.01em">{{s.t}}</span></div>
+</sc-for>
+
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .14em; color: #A3A9B6; padding-top: 12px">How it feels</div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8">
+<div style="border-radius: 14px; background: #11141A; padding: 14px; display: flex; align-items: flex-end; justify-content: center; gap: 14px">
+<span style="width: 34px; height: {{s.todayH}}; border-radius: 6px 6px 0 0; background: #A3A9B6"></span>
+<span style="width: 34px; height: {{s.roH}}; border-radius: 6px 6px 0 0; background: #FF5B2E"></span>
+</div>
+</sc-for>
+
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .14em; color: #A3A9B6; padding-top: 12px">Guest is doing</div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8"><div style="border-radius: 14px; background: #151922; border: 1px solid rgba(245,243,238,0.12); padding: 14px; font-size: 16px; line-height: 1.45">{{s.doing}}</div></sc-for>
+
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .14em; color: #A3A9B6; padding-top: 12px">Touchpoint</div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8"><div style="border-radius: 14px; background: #151922; border: 1px solid rgba(245,243,238,0.12); padding: 14px; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: -.01em; color: #4CD7E6">{{s.touch}}</div></sc-for>
+
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .14em; color: #A3A9B6; padding-top: 12px">Pain point today</div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8"><div style="border-radius: 14px; background: #11141A; padding: 14px; font-size: 16px; line-height: 1.45; color: #A3A9B6">{{s.pain}}</div></sc-for>
+
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .14em; color: #FF5B2E; padding-top: 12px">Recruit Ops opportunity</div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8"><div style="border-radius: 14px; border: 2px solid #FF5B2E; background: rgba(255,91,46,0.10); padding: 14px; font-size: 16px; line-height: 1.45; font-weight: 500">{{s.opp}}</div></sc-for>
+
+<div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .14em; color: #FFC145; padding-top: 12px">Guardrail</div>
+<sc-for list="{{stages}}" as="s" hint-placeholder-count="8"><div style="border-radius: 14px; border: 1px dashed #8C6A1E; padding: 14px; font-size: 15px; line-height: 1.45; color: #FFC145">{{s.guard}}</div></sc-for>
+</div>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  renderVals() {
+    const H = (n) => (n * 30) + 'px';
+    const S = [
+      { t: 'Plan', touch: 'Disneyland app', doing: 'Checks wait times the night before.', pain: 'No reason to open the app until you arrive.', opp: 'A teaser assignment and a recruit ID waiting in the app.', guard: 'Optional. The park works fine without it.', today: 2, ro: 3, head: '#A3A9B6' },
+      { t: 'Arrive', touch: 'The land itself', doing: 'Walks into Campus, phone in pocket.', pain: 'The story feels like set dressing.', opp: 'Base camp wakes up when you enter the land.', guard: 'One gentle alert per visit, max.', today: 3, ro: 4, head: '#A3A9B6' },
+      { t: 'Tap in', touch: 'MagicBand or phone', doing: 'Taps in at the attraction entrance.', pain: 'Tapping in is purely a ticket check.', opp: 'The tap you already do unlocks queue missions.', guard: 'Zero extra steps at the turnstile.', today: 3, ro: 4, head: '#4CD7E6' },
+      { t: 'Queue', touch: 'App + queue scenery', doing: 'Waits 35 minutes.', pain: 'Dead time. Phones come out anyway.', opp: 'Missions use the real scenery around you: spot-it, trivia, sound.', guard: 'Missions pause when the line moves. Audio version for every visual.', today: 1, ro: 4, head: '#FF5B2E' },
+      { t: 'Ride', touch: 'The attraction', doing: 'Rides.', pain: 'None. This part already works.', opp: 'Nothing. The ride stays untouched.', guard: 'No phones on board, ever.', today: 5, ro: 5, head: '#A3A9B6' },
+      { t: 'Debrief', touch: 'App', doing: 'Exits, checks the photo.', pain: 'The story ends at the exit door.', opp: 'Instant debrief: points, progress, what to do next.', guard: 'Under 10 seconds to read.', today: 2, ro: 4, head: '#4CD7E6' },
+      { t: 'Redeem', touch: 'Kiosk + cast member', doing: 'Wanders into a shop.', pain: 'Merch is just shopping.', opp: 'Pins you earned, picked up with one scan.', guard: 'Cast members scan a code. They never check answers.', today: 3, ro: 5, head: '#FFC145' },
+      { t: 'Return', touch: 'App notification', doing: 'Leaves Campus.', pain: 'Nothing carries over between visits.', opp: 'Points bank across visits toward the big rewards, and only three new quests drop each day, so tomorrow always has something new.', guard: 'Points never expire. Missed days don\u2019t stack up or guilt you.', today: 2, ro: 4, head: '#FFC145' }
+    ];
+    return { stages: S.map((s, i) => Object.assign({ n: 'Stage ' + (i + 1), todayH: H(s.today), roH: H(s.ro) }, s)) };
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

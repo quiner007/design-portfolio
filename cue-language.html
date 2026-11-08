@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cue Language · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Cue Language · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a6e;text-decoration:none}a:hover{color:#ff8a99}
+.scr{position:relative;width:402px;height:874px;overflow:hidden;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.scr *{box-sizing:border-box}
+main>*{flex-shrink:0}
+.lt{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.bd{font-size:17px;line-height:22px;letter-spacing:-.43px}
+.sh{font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fn{font-size:13px;line-height:18px;letter-spacing:-.08px}
+.c2{font-size:11px;line-height:13px;letter-spacing:.06px}
+.sec{color:rgba(235,235,245,0.6)}
+.glyph{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:32px;height:28px;border-radius:6px;background:#2c2c2e;flex:none}
+.glyph i{width:8px;height:8px;border-radius:999px;background:#f83c52}
+.glyph i.hold{width:14px;height:14px}
+.list{background:#1c1c1e;border-radius:22px;overflow:hidden}
+.row{display:flex;align-items:center;gap:12px;min-height:44px;padding:9px 16px;position:relative;color:#fff}
+.row:hover{color:#fff;background:#2c2c2e}
+.row + .row::before{content:"";position:absolute;top:0;right:0;left:60px;border-top:.5px solid rgba(84,84,88,0.65)}
+.row.plain + .row.plain::before{left:16px}
+.nota{flex:none;width:56px;height:20px;color:#f83c52}
+.chev{width:8px;height:13px;color:rgba(235,235,245,0.3);flex:none}
+.hdr{margin:0;padding:0 16px 8px}
+.val{color:rgba(235,235,245,0.6)}
+.tabs{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center}
+.tabbar{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(44,44,46,0.72);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border:.5px solid rgba(84,84,88,0.65)}
+.tab{min-width:84px;min-height:52px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff}
+.tab:hover{color:#fff}
+.tab[aria-current="page"]{color:#ff5a6e;background:rgba(120,120,128,0.36)}
+.tab svg{width:22px;height:22px}
+:focus-visible{outline:2px solid #ff5a6e;outline-offset:2px}
+.list,.hdr{animation:enter 520ms cubic-bezier(.2,.8,.2,1) both}
+.hdr:nth-of-type(2){animation-delay:40ms}.list:nth-of-type(1){animation-delay:80ms}
+main > .hdr:nth-of-type(3){animation-delay:140ms}main > .list:nth-of-type(2){animation-delay:180ms}
+main > .hdr:nth-of-type(4){animation-delay:240ms}main > .list:nth-of-type(3){animation-delay:280ms}
+.row{transition:background-color 160ms ease}
+.row .glyph i{transition:transform 200ms cubic-bezier(.2,.8,.2,1)}
+.nota rect{transform-box:fill-box;transform-origin:center}
+.row:hover .nota rect,.row:focus-visible .nota rect{animation:hit 320ms cubic-bezier(.2,.8,.2,1) both}
+.row:hover .nota rect:nth-of-type(2),.row:focus-visible .nota rect:nth-of-type(2){animation-delay:140ms}
+.row:hover .glyph i,.row:focus-visible .glyph i{animation:dot 260ms cubic-bezier(.2,.8,.2,1) both}
+.row:hover .glyph i:nth-child(2),.row:focus-visible .glyph i:nth-child(2){animation-delay:140ms}
+.row:hover .glyph i:nth-child(3),.row:focus-visible .glyph i:nth-child(3){animation-delay:280ms}
+.row:active{background-color:#3a3a3c}
+@keyframes enter{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:none}}
+@keyframes hit{0%{transform:scaleY(.2);opacity:.4}100%{transform:scaleY(1);opacity:1}}
+@keyframes dot{0%{transform:scale(1)}40%{transform:scale(1.7)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){
+.list,.hdr{animation:fadein 200ms ease both}
+.row:hover .nota rect,.row:focus-visible .nota rect,.row:hover .glyph i,.row:focus-visible .glyph i{animation:fadein 200ms ease both}
+}
+@keyframes fadein{0%{opacity:.4}100%{opacity:1}}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div class="scr">
+<main style="height:874px;overflow-y:auto;padding:62px 16px 140px;display:flex;flex-direction:column;scrollbar-width:none">
+<h1 class="lt">Language</h1>
+<p class="sh sec" style="margin:2px 0 0">Every gesture, and how it answers you. Tap one to feel it.</p>
+
+<p class="fn sec hdr" style="margin-top:20px">Playback</p>
+<div class="list">
+<a class="row" href="cue-home.html">
+<span class="glyph" aria-hidden="true"><i></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Single tap</span><span class="fn sec">Play / Pause · One soft pulse</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="5" width="16" height="10" rx="5" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+<a class="row" href="cue-signature.html">
+<span class="glyph" aria-hidden="true"><i></i><i></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Double tap</span><span class="fn sec">Next · One short tick</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="1" width="4" height="18" rx="2" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+<a class="row" href="cue-signature.html">
+<span class="glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Triple tap</span><span class="fn sec">Previous · Two short ticks</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="1" width="4" height="18" rx="2" fill="currentColor"></rect><rect x="14" y="1" width="4" height="18" rx="2" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+</div>
+
+<p class="fn sec hdr" style="margin-top:24px;display:flex;align-items:center;gap:8px"><span class="glyph" aria-hidden="true" style="width:20px;height:20px;background:transparent"><i class="hold" style="width:12px;height:12px"></i></span>Hold to move through noise modes</p>
+<div class="list">
+<a class="row" href="cue-signature.html">
+<span class="glyph" aria-hidden="true"><i style="width:12px;height:12px;background:#f83c52"></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Noise cancelling</span><span class="fn sec">Two rising pulses</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true" style="color:#f83c52"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="6" width="12" height="8" rx="4" fill="currentColor"></rect><rect x="22" y="1" width="12" height="18" rx="6" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+<a class="row" href="cue-signature.html">
+<span class="glyph" aria-hidden="true"><i style="width:12px;height:12px;background:#ffb340"></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Transparency</span><span class="fn sec">Two falling pulses</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true" style="color:#ffb340"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="1" width="12" height="18" rx="6" fill="currentColor"></rect><rect x="22" y="6" width="12" height="8" rx="4" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+<a class="row" href="cue-signature.html">
+<span class="glyph" aria-hidden="true"><i style="width:12px;height:12px;background:#8e8e93"></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Off</span><span class="fn sec">One long fade</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true"><defs><linearGradient id="fadeOff" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#8e8e93"></stop><stop offset="1" stop-color="#8e8e93" stop-opacity="0"></stop></linearGradient></defs><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="4" width="48" height="12" rx="6" fill="url(#fadeOff)"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+</div>
+
+<p class="fn sec hdr" style="margin-top:24px">New on the earcup</p>
+<div class="list">
+<a class="row" href="cue-volume.html">
+<span class="glyph" aria-hidden="true"><svg width="12" height="16" viewBox="0 0 12 16"><path d="M6 1v14M1.5 5.5 6 1l4.5 4.5" fill="none" stroke="#f83c52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Swipe up / down</span><span class="fn sec">Volume · A tick per step, rising</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="12" width="4" height="6" rx="2" fill="currentColor"></rect><rect x="14" y="9" width="4" height="9" rx="2" fill="currentColor"></rect><rect x="24" y="6" width="4" height="12" rx="2" fill="currentColor"></rect><rect x="34" y="2" width="4" height="16" rx="2" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+<a class="row" href="cue-volume.html">
+<span class="glyph" aria-hidden="true"><i></i><i></i></span>
+<span style="flex:1;min-width:0"><span class="bd" style="display:block">Hold both earcups</span><span class="fn sec">Live Translation · Low-high chime</span></span>
+<svg class="nota" viewBox="0 0 56 20" aria-hidden="true"><line x1="0" y1="10" x2="56" y2="10" stroke="rgba(120,120,128,0.36)"></line><rect x="4" y="8" width="16" height="8" rx="4" fill="currentColor"></rect><rect x="24" y="2" width="20" height="10" rx="5" fill="currentColor"></rect></svg>
+<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+</div>
+
+<p class="fn sec hdr" style="margin-top:24px">How it feels</p>
+<div class="list">
+<a class="row plain" href="cue-timing.html"><span class="bd" style="flex:1">Timing</span><span class="bd val">Standard</span><svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="row plain" href="cue-signature.html"><span class="bd" style="flex:1">Strength</span><span class="bd val">Medium</span><svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="row plain" href="cue-signature.html"><span class="bd" style="flex:1">Sound with each cue</span><span class="bd val">On</span><svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5 6.5 6.5 1.5 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+</main>
+
+<nav class="tabs" aria-label="Tabs"><div class="tabbar">
+<a class="tab" href="cue-home.html"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10 11 3l8 7v9h-5v-6H8v6H3z" fill="currentColor"></path></svg><span class="c2">Home</span></a>
+<a class="tab" href="cue-language.html" aria-current="page"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="5" cy="11" r="2.2" fill="currentColor"></circle><circle cx="11" cy="11" r="2.2" fill="currentColor"></circle><circle cx="17" cy="11" r="3.2" fill="currentColor"></circle></svg><span class="c2">Language</span></a>
+<a class="tab" href="cue-practice.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="1.6" fill="currentColor"></circle></svg><span class="c2">Practice</span></a>
+</div></nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+
+dcBoot(Component,{});
+</script>
+</body>
+</html>

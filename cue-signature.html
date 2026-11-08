@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cue Signature for Next · Quin Richards</title>
+<meta name="description" content="Quin Richards, UX and game designer.">
+<meta property="og:title" content="Cue Signature for Next · Quin Richards">
+<meta property="og:description" content="Quin Richards, UX and game designer.">
+<meta property="og:image" content="assets/0f172df78bd08b3962814cffe69580f5.jpg">
+<meta name="theme-color" content="#0d1a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230d1a13'/%3E%3Cpath d='M12 3 13.6 10.4 21 12 13.6 13.6 12 21 10.4 13.6 3 12 10.4 10.4Z' fill='%23f5c842'/%3E%3C/svg%3E">
+
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a6e;text-decoration:none}a:hover{color:#ff8a99}
+.scr{position:relative;width:402px;height:874px;overflow:hidden;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.scr *{box-sizing:border-box}
+.lt{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.t3{margin:0;font-size:20px;line-height:25px;font-weight:600;letter-spacing:-.45px}
+.hl{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.43px}
+.co{font-size:16px;line-height:21px;letter-spacing:-.31px}
+.sh{font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fn{font-size:13px;line-height:18px;letter-spacing:-.08px}
+.c1{font-size:12px;line-height:16px}
+.c2{font-size:11px;line-height:13px;letter-spacing:.06px}
+.sec{color:rgba(235,235,245,0.6)}
+.glyph{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:32px;height:28px;border-radius:6px;background:#2c2c2e;flex:none}
+.glyph i{width:8px;height:8px;border-radius:999px;background:#f83c52}
+.lane{position:relative;background:linear-gradient(transparent calc(50% - .5px), rgba(120,120,128,0.36) calc(50% - .5px), rgba(120,120,128,0.36) calc(50% + .5px), transparent calc(50% + .5px))}
+.ph{position:absolute;top:-6px;bottom:-6px;width:2px;border-radius:2px;background:#fff;opacity:0;pointer-events:none}
+.tile{transition:border-color 220ms ease,transform 160ms cubic-bezier(.2,.8,.2,1)}
+.tile:active{transform:scale(.97)}
+.playbtn{transition:transform 160ms cubic-bezier(.2,.8,.2,1)}
+.playbtn:active{transform:scale(.97)}
+.check{animation:pop 260ms cubic-bezier(.2,.8,.2,1) both}
+@keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes hitA{0%{transform:scaleY(.15);opacity:.35;filter:brightness(1)}40%{filter:brightness(1.5)}100%{transform:scaleY(1);opacity:1;filter:brightness(1)}}
+@keyframes hitB{0%{transform:scaleY(.15);opacity:.35;filter:brightness(1)}40%{filter:brightness(1.5)}100%{transform:scaleY(1);opacity:1;filter:brightness(1)}}
+@keyframes sweepA{0%{left:0;opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes sweepB{0%{left:0;opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes textA{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:none}}
+@keyframes textB{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:none}}
+@keyframes ringA{0%{box-shadow:0 0 0 0 rgba(208,16,47,.55)}100%{box-shadow:0 0 0 14px rgba(208,16,47,0)}}
+@keyframes ringB{0%{box-shadow:0 0 0 0 rgba(208,16,47,.55)}100%{box-shadow:0 0 0 14px rgba(208,16,47,0)}}
+@keyframes fadeA{0%{opacity:.4}100%{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+.ph{display:none}
+.tile,.playbtn{transition:none}
+.check{animation:fadeA 200ms ease both}
+.mo{animation-name:fadeA !important;animation-duration:200ms !important;animation-timing-function:ease !important}
+}
+.tabs{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center}
+.tabbar{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(44,44,46,0.72);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border:.5px solid rgba(84,84,88,0.65)}
+.tab{min-width:84px;min-height:52px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff}
+.tab:hover{color:#fff}
+.tab[aria-current="page"]{color:#ff5a6e;background:rgba(120,120,128,0.36)}
+.tab svg{width:22px;height:22px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid #ff5a6e;outline-offset:2px}
+</style>
+
+<style>body{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:24px 0;box-sizing:border-box}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+<div class="scr">
+<main style="padding:62px 16px 0;display:flex;flex-direction:column">
+<a href="cue-language.html" class="co" style="display:inline-flex;align-items:center;gap:4px;min-height:44px;margin-left:-6px;align-self:flex-start"><svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2 2 10l8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Language</a>
+<h1 class="lt">Next</h1>
+<p class="sh sec" style="margin:2px 0 0;display:flex;align-items:center;gap:8px"><span class="glyph" aria-hidden="true" style="width:auto;height:20px;background:transparent"><i></i><i></i></span>Double tap</p>
+
+<section style="margin-top:16px;background:#1c1c1e;border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:4px" aria-live="polite">
+<p class="fn sec" style="margin:0">How Next feels</p>
+<div class="mo" style="{{textAnim}}">
+<h2 class="t3">{{sig.name}}</h2>
+<p class="co sec" style="margin:4px 0 0">{{sig.desc}}</p>
+</div>
+<div aria-hidden="true" style="margin-top:12px;display:grid;grid-template-columns:56px minmax(0, 1fr);row-gap:8px;align-items:center">
+<span class="c1 sec">Haptic</span>
+<div class="lane" style="height:56px"><sc-for list="{{sig.haptic}}" as="p"><span class="mo" style="{{p.style}}"></span></sc-for><span class="ph" style="{{playhead}}"></span></div>
+<span class="c1 sec">Sound</span>
+<div class="lane" style="height:28px"><sc-for list="{{sig.sound}}" as="p"><span class="mo" style="{{p.style}}"></span></sc-for><span class="ph" style="{{playhead}}"></span></div>
+<span></span>
+<div class="c2 sec" style="display:flex;justify-content:space-between"><span>0</span><span>200</span><span>400 ms · shown at half speed</span></div>
+</div>
+</section>
+
+<button class="playbtn hl" onClick="{{play}}" style="{{playStyle}}">
+<svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1.5v13l11-6.5z" fill="currentColor"></path></svg>Feel it on your headphones</button>
+
+<p class="fn sec" style="margin:24px 0 0;padding:0 16px 8px">Choose a feel</p>
+<div role="radiogroup" aria-label="Signature for Next" style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:8px">
+<sc-for list="{{opts}}" as="o" hint-placeholder-count="4">
+<button class="tile" role="radio" aria-checked="{{o.checked}}" aria-disabled="{{o.disabled}}" onClick="{{o.pick}}" style="{{o.style}}">
+<span aria-hidden="true" class="lane" style="display:block;width:72px;height:20px"><sc-for list="{{o.mini}}" as="p"><span style="{{p.style}}"></span></sc-for></span>
+<span style="display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%">
+<span style="display:flex;flex-direction:column;text-align:left"><span class="hl">{{o.name}}</span><span class="c1 sec">{{o.note}}</span></span>
+<sc-if value="{{o.on}}" hint-placeholder-val="{{ false }}"><span class="check" aria-hidden="true" style="width:22px;height:22px;border-radius:999px;background:#d0102f;display:flex;align-items:center;justify-content:center;flex:none"><svg width="12" height="10" viewBox="0 0 12 10"><path d="M1.5 5.2 4.5 8 10.5 1.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></sc-if>
+</span>
+</button>
+</sc-for>
+</div>
+<p class="fn sec" style="margin:8px 0 0;padding:0 16px">No two actions share a feel, so you can tell them apart without looking.</p>
+</main>
+
+<nav class="tabs" aria-label="Tabs"><div class="tabbar">
+<a class="tab" href="cue-home.html"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10 11 3l8 7v9h-5v-6H8v6H3z" fill="currentColor"></path></svg><span class="c2">Home</span></a>
+<a class="tab" href="cue-language.html" aria-current="page"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="5" cy="11" r="2.2" fill="currentColor"></circle><circle cx="11" cy="11" r="2.2" fill="currentColor"></circle><circle cx="17" cy="11" r="3.2" fill="currentColor"></circle></svg><span class="c2">Language</span></a>
+<a class="tab" href="cue-practice.html"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="11" r="1.6" fill="currentColor"></circle></svg><span class="c2">Practice</span></a>
+</div></nav>
+</div>
+</template>
+<script src="dc.js"></script>
+<script>window.__EXT={};
+
+class Component extends DCLogic {
+  sigs() {
+    return {
+      tick: { name: 'One short tick', note: 'Crisp', desc: 'A single crisp tick. Short enough to feel through loud music.',
+        haptic: [{ t: 0, d: 20, h: 1 }], sound: [{ t: 0, d: 30, h: 0.8, f: 1400 }] },
+      knock: { name: 'Soft knock', note: 'Rounded', desc: 'One rounded thump. Gentle, but easier to miss on a loud train.',
+        haptic: [{ t: 0, d: 70, h: 0.6 }], sound: [{ t: 0, d: 90, h: 0.5, f: 300 }] },
+      fade: { name: 'Click and fade', note: 'Trailing', desc: 'A click that trails off, like turning a page.',
+        haptic: [{ t: 0, d: 20, h: 1 }, { t: 40, d: 220, h: 0.45, fade: true }], sound: [{ t: 0, d: 260, h: 0.6, fade: true, f: 900 }] },
+      two: { name: 'Two short ticks', note: 'Used by Previous', desc: 'Two quick ticks.', disabled: true,
+        haptic: [{ t: 0, d: 20, h: 1 }, { t: 120, d: 20, h: 1 }], sound: [{ t: 0, d: 30, h: 0.8, f: 1400 }, { t: 120, d: 30, h: 0.8, f: 1400 }] }
+    };
+  }
+
+  playSound(id) {
+    if (this.props.sound === false) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ac = this.ac || new AC();
+      const ac = this.ac;
+      if (ac.state === 'suspended') ac.resume();
+      const t0 = ac.currentTime + 0.02;
+      this.sigs()[id].sound.forEach((p) => {
+        const o = ac.createOscillator();
+        const g = ac.createGain();
+        const s = t0 + p.t / 1000;
+        const e = s + p.d / 1000;
+        o.type = 'sine';
+        o.frequency.setValueAtTime(p.f, s);
+        if (p.fade) o.frequency.exponentialRampToValueAtTime(p.f * 0.6, e);
+        g.gain.setValueAtTime(0.0001, s);
+        g.gain.exponentialRampToValueAtTime(0.18 * p.h + 0.04, s + 0.006);
+        g.gain.exponentialRampToValueAtTime(0.0001, e);
+        o.connect(g); g.connect(ac.destination);
+        o.start(s); o.stop(e + 0.03);
+      });
+    } catch (err) {}
+  }
+
+  run(id) {
+    const st = this.state || {};
+    this.setState({ picked: id, n: (st.n || 0) + 1 });
+    this.playSound(id);
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const picked = st.picked || 'tick';
+    const n = st.n || 0;
+    const k = n % 2 ? 'A' : 'B';
+    const live = n > 0;
+    const ease = 'cubic-bezier(.2,.8,.2,1)';
+    const SLOW = 2;
+    const RED = '#f83c52';
+    const CORAL = '#ff6b57';
+    const SIGS = this.sigs();
+    const draw = (list, laneH, scale, color, minW, animate) => list.map((p) => {
+      const h = Math.max(4, Math.round(p.h * laneH));
+      const w = Math.max(minW, Math.round(p.d * scale));
+      const bg = p.fade ? 'linear-gradient(90deg, ' + color + ', rgba(248,60,82,0))' : color;
+      return { style: 'position:absolute;top:50%;left:' + Math.round(p.t * scale) + 'px;width:' + w + 'px;height:' + h + 'px;margin-top:-' + (h / 2) + 'px;border-radius:999px;background:' + bg +
+        (animate ? ';animation:hit' + k + ' ' + Math.max(180, p.d * SLOW) + 'ms ' + ease + ' ' + (p.t * SLOW) + 'ms both' : '') };
+    });
+    const cur = SIGS[picked];
+    const plotScale = 250 / 400;
+    const sig = {
+      name: cur.name,
+      desc: cur.desc,
+      haptic: draw(cur.haptic, 52, plotScale, RED, 4, live),
+      sound: draw(cur.sound, 24, plotScale, CORAL, 4, live)
+    };
+    const opts = Object.keys(SIGS).map((id) => {
+      const s = SIGS[id];
+      const on = id === picked;
+      return {
+        name: s.name,
+        note: s.note,
+        on,
+        checked: String(on),
+        disabled: String(!!s.disabled),
+        mini: draw(s.haptic, 18, 72 / 300, s.disabled ? '#8e8e93' : RED, 3, false),
+        pick: s.disabled ? null : () => this.run(id),
+        style: 'min-height:84px;border-radius:14px;background:#1c1c1e;padding:12px;display:flex;flex-direction:column;justify-content:space-between;gap:8px;text-align:left;border:2px solid ' + (on ? '#ff5a6e' : 'transparent') + ';cursor:' + (s.disabled ? 'not-allowed' : 'pointer') + (s.disabled ? ';background:transparent;outline:1px dashed rgba(84,84,88,0.9);outline-offset:-1px' : '')
+      };
+    });
+    return {
+      sig,
+      opts,
+      textAnim: live ? 'animation:text' + k + ' 320ms ' + ease + ' both' : '',
+      playhead: live ? 'animation:sweep' + k + ' ' + (400 * SLOW) + 'ms linear both' : '',
+      playStyle: 'margin-top:12px;min-height:50px;border:0;border-radius:999px;background:#d0102f;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px' + (live ? ';animation:ring' + k + ' 600ms ease-out both' : ''),
+      play: () => this.run(picked)
+    };
+  }
+}
+
+dcBoot(Component,{"sound": true});
+</script>
+</body>
+</html>
