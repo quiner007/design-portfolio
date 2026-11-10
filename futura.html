@@ -372,7 +372,7 @@ class Component extends DCLogic {
   }
 
   playerVals() {
-    const T = [['Woody', 'assets/3cb633f413ddb51cf1d879d80997d6ae.webm'], ['Leap', 'assets/a0092cc61096be824dcd1f837aab1393.webm'], ['Flowershop', 'assets/e3fe5c180bbee1723761c94f6e05b186.webm'], ['Copper', 'assets/6f541f47ab605c1fc88780ab458dbc80.webm'], ['Lovelorn', 'assets/ed6920d0f9ee29f36bd629d8144d70df.webm'], ['Child', 'assets/2c61fc562fc818771f83b0e86c1c411b.webm']];
+    if (window.__webmOK === undefined) { try { window.__webmOK = !!new Audio().canPlayType('audio/webm; codecs="opus"'); } catch (e) { window.__webmOK = false; } } const T = [['Woody', 'assets/3cb633f413ddb51cf1d879d80997d6ae.webm', 'assets/music/woody.m4a'], ['Leap', 'assets/a0092cc61096be824dcd1f837aab1393.webm', 'assets/music/leap.m4a'], ['Flowershop', 'assets/e3fe5c180bbee1723761c94f6e05b186.webm', 'assets/music/flowershop.m4a'], ['Copper', 'assets/6f541f47ab605c1fc88780ab458dbc80.webm', 'assets/music/copper.m4a'], ['Lovelorn', 'assets/ed6920d0f9ee29f36bd629d8144d70df.webm', 'assets/music/lovelorn.m4a'], ['Child', 'assets/2c61fc562fc818771f83b0e86c1c411b.webm', 'assets/music/child.m4a']].map(function (t) { return [t[0], window.__webmOK ? t[1] : t[2]]; });
     const st = this.state || {};
     const i = st.trk || 0;
     const on = !!st.playing;
