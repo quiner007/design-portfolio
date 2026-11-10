@@ -348,18 +348,21 @@ class Component extends DCLogic {
 
   playerVals() {
     if (window.__webmOK === undefined) { try { window.__webmOK = !!new Audio().canPlayType('audio/webm; codecs="opus"'); } catch (e) { window.__webmOK = false; } } const T = [['Woody', 'assets/3cb633f413ddb51cf1d879d80997d6ae.webm', 'assets/music/woody.m4a'], ['Leap', 'assets/a0092cc61096be824dcd1f837aab1393.webm', 'assets/music/leap.m4a'], ['Flowershop', 'assets/e3fe5c180bbee1723761c94f6e05b186.webm', 'assets/music/flowershop.m4a'], ['Copper', 'assets/6f541f47ab605c1fc88780ab458dbc80.webm', 'assets/music/copper.m4a'], ['Lovelorn', 'assets/ed6920d0f9ee29f36bd629d8144d70df.webm', 'assets/music/lovelorn.m4a'], ['Child', 'assets/2c61fc562fc818771f83b0e86c1c411b.webm', 'assets/music/child.m4a']].map(function (t) { return [t[0], window.__webmOK ? t[1] : t[2]]; });
+    if (!this.__qres) { this.__qres = 1; try { const sv = JSON.parse(sessionStorage.getItem('qplay') || 'null'); if (sv && typeof sv.trk === 'number') { this.state = Object.assign({}, this.state, { trk: sv.trk, playing: false }); this.__qat = sv.t || 0; if (sv.playing) this.__qgo = 1; } } catch (e) {} }
     const st = this.state || {};
     const i = st.trk || 0;
     const on = !!st.playing;
     const go = (j, play) => {
       const k = (j + T.length) % T.length;
       try {
-        if (!this.au) { this.au = new Audio(); window.__qau = this.au; this.au.volume = window.__qvget ? window.__qvget() : 0.8; this.au.preload = 'none'; this.au.onended = () => go((this.state && this.state.trk || 0) + 1, true); }
-        if (this.au.dataset.k !== String(k)) { this.au.src = T[k][1]; this.au.dataset.k = String(k); }
+        if (!this.au) { this.au = new Audio(); window.__qau = this.au; this.au.volume = window.__qvget ? window.__qvget() : 0.8; this.au.preload = 'none'; this.au.onended = () => go((this.state && this.state.trk || 0) + 1, true); const sv = () => { try { sessionStorage.setItem('qplay', JSON.stringify({ trk: (this.state && this.state.trk) | 0, t: this.au.currentTime || 0, playing: !this.au.paused })); } catch (e) {} }; this.au.addEventListener('timeupdate', () => { const n = Date.now(); if (n - (this.__qsv || 0) > 1000) { this.__qsv = n; sv(); } }); window.addEventListener('pagehide', sv); document.addEventListener('visibilitychange', () => { if (document.hidden) sv(); }); }
+        if (this.au.dataset.k !== String(k)) { this.au.src = T[k][1]; this.au.dataset.k = String(k); if (this.__qat) { const at = this.__qat; this.__qat = 0; const au = this.au; const seek = () => { try { if (at < (au.duration || 1e9)) au.currentTime = at; } catch (e) {} au.removeEventListener('loadedmetadata', seek); }; au.addEventListener('loadedmetadata', seek); } }
         if (play) { const p = this.au.play(); if (p && p.catch) p.catch(() => this.setState({ playing: false })); } else this.au.pause();
       } catch (e) {}
       this.setState({ trk: k, playing: !!play });
+      try { sessionStorage.setItem('qplay', JSON.stringify({ trk: k, t: (this.au && this.au.currentTime) || 0, playing: !!play })); } catch (e) {}
     };
+    if (this.__qgo) { this.__qgo = 0; setTimeout(() => go(i, true), 0); }
     return {
       sky: this.skyVals(),
       cls: 'mx-player' + (on ? ' is-on' : ''),
