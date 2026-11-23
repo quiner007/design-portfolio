@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..800&display=swap" rel="stylesheet">
 <style>
-@page { size: letter; margin: 0.44in 0.5in; }
+@page { size: letter; margin: 0.4in 0.5in; }
 :root { --ink:#2A2235; --muted:#605A69; --pink:#E32076; --orange:#FF5234; --rule:#2A2235; }
 * { box-sizing: border-box; }
 html, body { margin:0; padding:0; background:#fff; }
@@ -19,10 +19,10 @@ body { font-family:'Lexend', system-ui, sans-serif; color:var(--ink); font-size:
 .title { margin:5px 0 0; font-weight:700; font-size:10pt; letter-spacing:-.01em; color:var(--pink); }
 .contact { text-align:right; font-size:8.4pt; line-height:1.55; color:var(--muted); flex:none; }
 .summary { margin:9px 0 0; font-size:8.6pt; line-height:1.38; }
-h2 { margin:10px 0 0; padding:0 0 4px; border-bottom:1.4pt solid var(--rule);
+h2 { margin:9px 0 0; padding:0 0 4px; border-bottom:1.4pt solid var(--rule);
   font-weight:700; font-size:8.6pt; letter-spacing:.22em; color:var(--orange); }
 h2 .at { font-weight:600; letter-spacing:0; color:var(--ink); text-transform:none; }
-.job { margin-top:5.5px; break-inside:avoid; }
+.job { margin-top:5px; break-inside:avoid; }
 .jh { display:flex; align-items:baseline; justify-content:space-between; gap:14px; }
 .org { font-weight:700; font-size:11pt; letter-spacing:-.03em; display:flex; align-items:center; gap:7px; }
 .org i { width:7px; height:7px; border-radius:50%; flex:none; display:block; }
@@ -40,10 +40,12 @@ li::before { content:""; position:absolute; left:2px; top:.52em; width:3.2px; he
 .cols { display:grid; grid-template-columns:1fr 1.22fr; gap:0 34px; }
 .edu { margin-top:9px; }
 .edu b { font-weight:700; }
-dl { display:grid; grid-template-columns:auto 1fr; gap:3px 16px; margin:8px 0 0; }
+dl { display:grid; grid-template-columns:auto 1fr; gap:2px 16px; margin:7px 0 0; }
 dt { font-weight:700; font-size:7.6pt; letter-spacing:.16em; color:var(--muted); padding-top:1px; }
 dd { margin:0; }
-@media screen { html { background:#E6E4E8; } body { width:8.5in; min-height:11in; padding:0.44in 0.5in; margin:0 auto; background:#fff; } }
+a { color:inherit; text-decoration:none; }
+.contact a { font-weight:600; color:var(--pink); }
+@media screen { html { background:#E6E4E8; } body { width:8.5in; min-height:11in; padding:0.4in 0.5in; margin:0 auto; background:#fff; } }
 </style>
 </head>
 <body>
@@ -52,23 +54,23 @@ dd { margin:0; }
     <div><h1 class="name">Quin Richards</h1>
       <p class="title">UX + Game Designer &nbsp;|&nbsp; Experience Designer</p></div>
   </div>
-  <div class="contact">Los Angeles, CA<br>quinrdesign@gmail.com<br>linkedin.com/in/quin-richards<br>quiner007.github.io/design-portfolio</div>
+  <div class="contact">Los Angeles, CA<br>quinrdesign@gmail.com<br>linkedin.com/in/quin-richards<br><a href="https://quiner007.github.io/design-portfolio">Portfolio</a></div>
 </header>
 <p class="summary">UX designer for games and interactive products, specializing in playtest research, game UI and HUD
-design, rapid prototyping and design systems. Currently: player-experience research and game-feel UX on
-<i>Godzilla: Destroy All Monsters Melee</i>, and the design system for Stellar’s Profile platform.</p>
+design, rapid prototyping and design systems. Currently: game-feel and player-experience UX on
+<i>Godzilla: Destroy All Monsters Melee</i>, and the design system for Stellar’s Profile.</p>
 
 <h2>EXPERIENCE</h2>
-<article class="job"><div class="jh"><span class="org"><i style="background:#E32076"></i>Digital Eclipse</span><span class="date">2026 – PRESENT</span></div><div class="role">UX Consultant (contract): <i>Godzilla: Destroy All Monsters Melee</i>, earlier <i>MK: Legacy Kollection</i></div><ul><li>Led UX research for two online playtests with 45 participants, synthesizing results into a single prioritized fix list for design and operations leads.</li><li>Benchmarked 10 comparable launches to define day-one online feature scope, and specified a matchmaking design that surfaces connection quality to players.</li><li>Redesigned character select and the connection-warning flow, and evaluated VFX and game feel against the original release across 7 criteria.</li><li>Ranked demo-period player reviews into a top-five issue list ahead of launch; title shipped at 96% positive (Overwhelmingly Positive) on Steam.</li></ul></article>
-<article class="job"><div class="jh"><span class="org"><i style="background:#FF5234"></i>Stellar</span><span class="date">2026 – PRESENT</span></div><div class="role">UX / Product Designer (contract) · Platform development currently paused</div><ul><li>Designed the UI and design system for Profile, a freelance talent marketplace built on verified case studies rather than résumés, ahead of an invite-only alpha.</li><li>Consolidated several competing UI directions into one system the team continues to build on.</li><li>Restructured navigation into four core tabs with a Dashboard home, surfacing verification status and new opportunities on every visit.</li><li>Designed the three-tier verification flow and its badge language, keeping human reviewers as the final authority: “pending human review,” never “AI-verified.”</li></ul></article>
-<article class="job"><div class="jh"><span class="org"><i style="background:#429123"></i>Apple</span><span class="date">2026 – PRESENT</span></div><div class="role">Specialist, Apple Store</div><ul><li>Deliver one-on-one setup and training across iPhone, Mac and accessories, frequently for first-time users.</li><li>Observe daily where customers encounter friction in Apple’s interfaces, and apply those findings to ongoing HI and UX work.</li></ul></article>
-<article class="job"><div class="jh"><span class="org"><i style="background:#F5AD0B"></i>The Walt Disney Company</span><span class="date">OCT 2025 – APR 2026</span></div><div class="role">UX Designer &amp; Rapid Prototype Engineer</div><ul><li>Identified a workflow gap affecting writers across Disney’s creative banners, and ran the supporting research to validate it.</li><li>Designed the end-to-end flows and built a functional prototype to demonstrate the proposed solution.</li><li>Presented to stakeholders; the project was greenlit and company-backed within weeks of the first pitch.</li></ul></article>
+<article class="job"><div class="jh"><span class="org"><i style="background:#E32076"></i>Digital Eclipse</span><span class="date">2026 – PRESENT</span></div><div class="role">UX Consultant (contract): <i>Godzilla: Destroy All Monsters Melee</i>, earlier <i>MK: Legacy Kollection</i></div><ul><li>Led UX research for two online playtests with 45 participants, synthesizing results into a single prioritized fix list for design and operations leads.</li><li>Benchmarked 10 comparable launches to define day-one online scope, and specified matchmaking that surfaces connection quality to players.</li><li>Redesigned character select and the connection-warning flow, and evaluated VFX and game feel against the original release across 7 criteria.</li><li>Ranked demo-period player reviews into a top-five issue list ahead of launch; title shipped at 96% positive (Overwhelmingly Positive) on Steam.</li></ul></article>
+<article class="job"><div class="jh"><span class="org"><i style="background:#FF5234"></i>Stellar</span><span class="date">2026 – PRESENT</span></div><div class="role">UX / Product Designer (contract) · Platform development currently paused</div><ul><li>Designed the UI and design system for Profile, a freelance talent marketplace built on verified case studies rather than résumés, ahead of an invite-only alpha.</li><li>Consolidated several competing UI directions into one system the team continues to build on.</li><li>Restructured navigation into four core tabs with a Dashboard home, surfacing verification status and opportunities on every visit.</li><li>Designed the three-tier verification flow and badge language, keeping human reviewers the final authority: “pending human review,” never “AI-verified.”</li></ul></article>
+<article class="job"><div class="jh"><span class="org"><i style="background:#429123"></i>Apple</span><span class="date">2026 – PRESENT</span></div><div class="role">Specialist, Apple Store</div><ul><li>Deliver one-on-one setup and training across iPhone, Mac and accessories, often for first-time users.</li><li>Observe daily where customers encounter friction in Apple’s interfaces, and apply those findings to ongoing HI and UX work.</li></ul></article>
+<article class="job"><div class="jh"><span class="org"><i style="background:#F5AD0B"></i>The Walt Disney Company</span><span class="date">OCT 2025 – APR 2026</span></div><div class="role">UX Designer &amp; Rapid Prototype Engineer</div><ul><li>Originated the project with no brief or mandate, identifying a workflow problem affecting writers across multiple Disney creative banners and running the research that proved it.</li><li>Owned the solution end to end as the sole designer, from research and user flows through UI and a working prototype, so leadership reviewed a build rather than a deck.</li><li>Won executive buy-in on the first pitch: greenlit and company-backed within weeks, from self-initiated concept to funded project inside a six-month engagement.</li></ul></article>
 <article class="job"><div class="jh"><span class="org"><i style="background:#E9260B"></i>Beamdown (Steam)</span><span class="date">AUG 2024 – MAY 2025</span></div><div class="role">Lead Designer</div><ul><li>Directed design for a 30+ person team through a public Steam launch at 83% positive, owning combat, boss and narrative direction.</li></ul></article>
 <p class="earlier"><b>Earlier:</b> Program Coordinator &amp; Broadcast Producer, University of Utah Esports
 (2022 – 2025). Research Team Lead, Riot Games student program (2018), translating player feedback into
 structured findings.</p>
 
-<h2>CASE STUDIES <span class="at">at quiner007.github.io/design-portfolio</span></h2>
+<h2>SELECTED CASE STUDIES <span class="at">— full write-ups in the <a href="https://quiner007.github.io/design-portfolio">portfolio</a></span></h2>
 <div class="cases"><div><b style="color:#E32076">Godzilla UX</b><span>Playtest synthesis, HUD and character select redesigns, VFX review, launch feedback.</span></div><div><b style="color:#FF5234">Cue</b><span>Eyes-free gesture and haptic language for headphones, with a 10-screen prototype and VoiceOver states.</span></div><div><b style="color:#429123">Recruit Ops</b><span>A 35-minute theme park queue restructured as a mission system, in iPhone and Duo versions.</span></div></div>
 
 <div class="cols">
